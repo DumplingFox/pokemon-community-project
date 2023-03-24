@@ -1,11 +1,10 @@
 const { Schema, model } = require("mongoose");
 
-// TODO: Please make sure you edit the User model to whatever makes sense in this case
 const userSchema = new Schema(
   {
     username: {
       type: String,
-      required: false,
+      required: true,
       unique: true,
       trim: true,
     },
@@ -19,6 +18,16 @@ const userSchema = new Schema(
     password: {
       type: String,
       required: true,
+    },
+    region: {
+      type: String,
+      required: true,
+      enum: ["Africa", "Asia", "Australia", "Europe", "Middle East", "North America", "South America", "New Zealand"]
+    },
+    imgUrl: {
+      type: String,
+      required: false,
+      default: "picture of pikachu or smth" // remember to insert an image here
     },
   },
   {

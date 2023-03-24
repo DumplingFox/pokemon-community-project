@@ -1,0 +1,65 @@
+<h1>here is a form to create a new pokemon</h1>
+
+<form method="POST" action="/pokemon/create">
+
+    <label> Name:
+        <input type="text" name="name">
+    </label>
+
+    <label> Type:
+
+        <select name="type" multiple>
+            {{#each typeEnum}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+    </label>
+
+    <label> Species:
+        <input type="text" name="species">
+    </label>
+
+    <label> National No.:
+        <input type="number" name="indexNumber" min="1">
+    </label>
+
+    <label> Height:
+        <input type="number" name="height">
+    </label>
+
+    <label> Weight:
+        <input type="number" name="weight">
+    </label>
+
+    <!-- <div>
+        <legend>Regional Exclusive?</legend>
+
+        <div>
+            <input type="radio" id="yes" name="yes" value="yes">
+            <label for="yes">Yes</label>
+        </div>
+
+        <div>
+            <input type="radio" id="no" name="no" value="no" checked>
+            <label for="no">No</label>
+        </div>
+    </div> -->
+
+
+    <label> Region:
+        <select name="region" multiple>
+            {{#each regionEnum}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+    </label>
+
+    <label> Pokemon Image:
+        <input type="text" placeholder="paste URL here" name="imgUrl">
+    </label>
+
+
+    <button type="submit"> Create </button>
+
+</form>
