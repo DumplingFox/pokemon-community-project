@@ -30,8 +30,13 @@ app.use("/", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
+<<<<<<< HEAD
 app.use("/", require("./routes/pokemon.routes"));
 
+=======
+const adminRoutes = require("./routes/admin.routes")
+app.use("/", adminRoutes)
+>>>>>>> 801dd58 (middleware models routes for admin and users)
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
