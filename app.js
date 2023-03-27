@@ -32,8 +32,11 @@ app.use("/auth", authRoutes);
 
 app.use("/", require("./routes/pokemon.routes"));
 
-const adminRoutes = require("./routes/admin.routes")
+const adminRoutes = require("./routes/admin.routes");
 app.use("/", adminRoutes);
+
+app.use("/", require("./routes/post.routes"));
+
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
