@@ -1,9 +1,10 @@
-<h1>here is a form to create a new pokemon</h1>
+<h1>this is the page for updating pokemon!</h1>
 
-<form method="POST" action="/pokemon/create">
+<h2>Edit the pokemon: {{pokemon.name}} </h2>
+<form method="POST" action="/pokemon/{{pokemon._id}}/edit">
 
     <label> Name:
-        <input type="text" name="name">
+        <input type="text" name="name" value="{{pokemon.name}}">
     </label>
 
     <label> Type:
@@ -15,21 +16,22 @@
         </select>
 
     </label>
+    
 
     <label> Species:
-        <input type="text" name="species">
+        <input type="text" name="species" value="{{pokemon.species}}">
     </label>
 
     <label> National No.:
-        <input type="number" name="indexNumber" min="1">
+        <input type="number" name="indexNumber" min="1" value="{{pokemon.indexNumber}}">
     </label>
 
     <label> Height:
-        <input type="number" name="height">
+        <input type="number" name="height" value="{{pokemon.height}}">
     </label>
 
     <label> Weight:
-        <input type="number" name="weight">
+        <input type="number" name="weight" value="{{pokemon.weight}}">
     </label>
 
     <div>
@@ -46,7 +48,6 @@
         </div>
     </div>
 
-
     <label> Region:
         <select name="region" multiple>
             {{#each regionEnum}}
@@ -56,10 +57,10 @@
     </label>
 
     <label> Pokemon Image:
-        <input type="text" placeholder="paste URL here" name="imgUrl">
+        <input type="text" name="imgUrl" value="{{pokemon.imgUrl}}">
     </label>
 
 
-    <button type="submit"> Create </button>
+    <button type="submit"> Save Changes </button>
 
 </form>

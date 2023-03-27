@@ -3,7 +3,7 @@ const Pokemon = require('../models/Pokemon.model');
 
 const router = express.Router();
 
-// READ: route to access pokemon list
+// READ: entire list
 router.get("/pokemon", (req, res, next) => {
     Pokemon.find()
         .then(pokemonArr => {
@@ -20,7 +20,7 @@ router.get("/pokemon", (req, res, next) => {
         });
 })
 
-// CREATE: route to get pokemon create form
+// CREATE: get form
 router.get("/pokemon/create", (req, res, next) => {
 
     const typeEnum = Pokemon.schema.path('type').enumValues;
@@ -29,7 +29,7 @@ router.get("/pokemon/create", (req, res, next) => {
     res.render("pokemon/pokemon-create", { typeEnum, regionEnum });
 })
 
-// CREATE: route to post newly created pokemon
+// CREATE: post
 router.post("/pokemon/create", (req, res, next) => {
 
     const pokemonDetails = {
@@ -54,7 +54,51 @@ router.post("/pokemon/create", (req, res, next) => {
         });
 })
 
-// READ: route to access individual pokemon details
+// UPDATE (get): 
+router.get("/pokemon/:pokemonId/edit", (req, res, next) => {
+
+    const typeEnum = Pokemon.schema.path('type').enumValues;
+    const regionEnum = Pokemon.schema.path('region').enumValues;
+    const pokemonId = req.params.pokemonId;
+
+    Pokemon.findById(pokemonId)
+        .then(pokemonToUpdate => {
+            res.render('pokemon/pokemon-edit', { pokemon: pokemonToUpdate, typeEnum, regionEnum });
+    })
+    .catch(e => {
+        console.log("error getting pokemon details from DB", e);
+        next(e);
+      });
+})
+
+// UPDATE (post):
+router.post('/pokemon/:pokemonId/edit', (req, res, next) => {
+
+    const pokemonId = req.params.pokemonId;
+    const { name, type, species, indexNumber, height, weight, regionalExclusive, region, imgUrl } = req.body;
+
+    Pokemon.findByIdAndUpdate(pokemonId, { name, type, species, indexNumber, height, weight, regionalExclusive, region, imgUrl }, { new: true })
+    .then(updatedPokemon => res.redirect(`/pokemon/${pokemonId}`))
+    .catch(e => {
+        console.log("error updating pokemon details", e);
+        next(e);
+      });
+});
+
+// DELETE
+router.post("/pokemon/:pokemonId/delete", (req, res, next) => {
+    const pokemonId = req.params.pokemonId; 
+
+    Pokemon.findByIdAndDelete(pokemonId)
+        .then(res.redirect("/pokemon"))
+        .catch(e => {
+            console.log("error deleting pokemon", e);
+            next(e);
+          });
+})
+
+
+// READ: pokemon details
 router.get("/pokemon/:pokemonId", (req, res, next) => {
 
     const pokemonId = req.params.pokemonId;
@@ -68,11 +112,5 @@ router.get("/pokemon/:pokemonId", (req, res, next) => {
             next(e);
         });
 })
-
-
-// UPDATE: 
-
-// DELETE:
-
 
 module.exports = router;
