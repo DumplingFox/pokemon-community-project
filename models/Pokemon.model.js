@@ -7,8 +7,8 @@ const pokemonSchema = new Schema(
             required: true,
         },
         type: {
-            type: String,
-            enum: ["Bug", "Dragon", "Electric", "Fighting", "Fire", "Flying", "Ghost", "Grass", "Ground", "Ice", "Normal", "Poison", "Psychic", "Rock", "Water"],
+            type: [String],
+            enum: ["bug", "dragon", "electric", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "water"],
         },
         species: {
             type: String,
