@@ -34,28 +34,6 @@
         <input type="number" name="weight" value="{{pokemon.weight}}">
     </label>
 
-    <div>
-        <legend>Regional Exclusive?</legend>
-
-        <div>
-            <input type="radio" id="yes" name="regionalExclusive" value="yes">
-            <label for="yes">Yes</label>
-        </div>
-
-        <div>
-            <input type="radio" id="no" name="regionalExclusive" value="no" checked>
-            <label for="no">No</label>
-        </div>
-    </div>
-
-    <label> Region:
-        <select name="region" multiple>
-            {{#each regionEnum}}
-            <option value="{{this}}">{{this}}</option>
-            {{/each}}
-        </select>
-    </label>
-
     <label> Pokemon Image:
         <input type="text" name="imgUrl" value="{{pokemon.imgUrl}}">
     </label>

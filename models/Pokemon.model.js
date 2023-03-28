@@ -21,13 +21,6 @@ const pokemonSchema = new Schema(
         }, 
         height: Number,
         weight: Number, 
-        regionalExclusive: {
-            type: Boolean
-        },
-        region: {
-            type: String,
-            enum: ["Africa", "Asia", "Australia", "Europe", "Middle East", "North America", "South America", "New Zealand"]
-        },
         imgUrl: {
             type: String
         }

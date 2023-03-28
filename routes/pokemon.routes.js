@@ -24,9 +24,8 @@ router.get("/pokemon", (req, res, next) => {
 router.get("/pokemon/create", (req, res, next) => {
 
     const typeEnum = Pokemon.schema.path('type').enumValues;
-    const regionEnum = Pokemon.schema.path('region').enumValues;
 
-    res.render("pokemon/pokemon-create", { typeEnum, regionEnum });
+    res.render("pokemon/pokemon-create", { typeEnum });
 })
 
 // CREATE: post
@@ -39,8 +38,6 @@ router.post("/pokemon/create", (req, res, next) => {
         indexNumber: req.body.indexNumber,
         height: req.body.height,
         weight: req.body.weight,
-        regionalExclusive: req.body.regionalExclusive,
-        region: req.body.region,
         imgUrl: req.body.imgUrl
     }
 
@@ -58,12 +55,11 @@ router.post("/pokemon/create", (req, res, next) => {
 router.get("/pokemon/:pokemonId/edit", (req, res, next) => {
 
     const typeEnum = Pokemon.schema.path('type').enumValues;
-    const regionEnum = Pokemon.schema.path('region').enumValues;
     const pokemonId = req.params.pokemonId;
 
     Pokemon.findById(pokemonId)
         .then(pokemonToUpdate => {
-            res.render('pokemon/pokemon-edit', { pokemon: pokemonToUpdate, typeEnum, regionEnum });
+            res.render('pokemon/pokemon-edit', { pokemon: pokemonToUpdate, typeEnum });
     })
     .catch(e => {
         console.log("error getting pokemon details from DB", e);
@@ -75,9 +71,9 @@ router.get("/pokemon/:pokemonId/edit", (req, res, next) => {
 router.post('/pokemon/:pokemonId/edit', (req, res, next) => {
 
     const pokemonId = req.params.pokemonId;
-    const { name, type, species, indexNumber, height, weight, regionalExclusive, region, imgUrl } = req.body;
+    const { name, type, species, indexNumber, height, weight, imgUrl } = req.body;
 
-    Pokemon.findByIdAndUpdate(pokemonId, { name, type, species, indexNumber, height, weight, regionalExclusive, region, imgUrl }, { new: true })
+    Pokemon.findByIdAndUpdate(pokemonId, { name, type, species, indexNumber, height, weight, imgUrl }, { new: true })
     .then(updatedPokemon => res.redirect(`/pokemon/${pokemonId}`))
     .catch(e => {
         console.log("error updating pokemon details", e);
