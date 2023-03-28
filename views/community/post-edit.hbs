@@ -9,8 +9,9 @@
     </label>
 
     <label>Image:
+        <img src="{{post.imageUrl}}" alt="{{title}}">
         <input type="file" name="post-image" class="form-control-file" />
-        <input type="text" name="existingImage" hidden value="{{imageUrl}}">
+        <input type="text" name="existingImage" hidden value="{{post.imageUrl}}">
     </label>
 
     <button>Save changes</button>

@@ -1,19 +1,15 @@
 <h2>This is community</h2>
 
-{{#each post}}
-
-<section class="post-summary">
-    <h2>{{this.title}}</h2>
-    <p>
-        Content:{{this.content}}
-        <a href="/community/post/{{this._id}}">more details</a>
-
-        <a href="/community/post/{{this._id}}/edit">update</a>
-    </p>
-
-    <form action="/community/post/{{this._id}}/delete" method="POST">
-        <button>Delete</button>
-    </form>
-</section>
-
-{{/each}}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {{#each post}}
+    <div class="col">
+        <div class="card">
+            <img src="{{this.imageUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">{{this.content}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
