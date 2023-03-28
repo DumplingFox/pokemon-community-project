@@ -1,5 +1,13 @@
 const express = require("express");
 const router = express.Router();
+const app = express();
+const multer = require('multer')
+
+//importing mongoose schema file
+const Upload = require("../models/Upload.model");
+
+// require cloudinary
+const fileUploader = require('../config/cloudinary.config');
 
 //require post model
 const PostSomething = require("../models/Post.model");
@@ -35,21 +43,29 @@ router.get("/community/post/create", (req, res, next) => {
 
 // CREATE: POST posts
 
-router.post("/community/post/create", (req, res, next) => {
+router.post("/community/post/create", fileUploader.single('post-image'), (req, res, next) => {
 
-    const postDetails = {
-        title: req.body.title,
-        content: req.body.content,
+    const { title, content } = req.body;
+    if (req.file) {
+        PostSomething.create({ title, content, imageUrl: req.file.path })
+            .then(responseFromDB => {
+                res.redirect("/community");
+            })
+            .catch(e => {
+                console.log("error creating posts from DB", e);
+                next(e);
+            })
+    } else {
+        PostSomething.create({ title, content })
+            .then(responseFromDB => {
+                res.redirect("/community");
+            })
+            .catch(e => {
+                console.log("error creating posts from DB", e);
+                next(e);
+            })
+
     }
-
-    PostSomething.create(postDetails)
-        .then(responseFromDB => {
-            res.redirect("/community");
-        })
-        .catch(e => {
-            console.log("error creating posts from DB", e);
-            next(e);
-        })
 })
 
 //READ: post details
@@ -91,11 +107,19 @@ router.get("/community/post/:postId/edit", (req, res, next) => {
 
 // UPDATE: POST post
 
-router.post("/community/post/:postId/edit", (req, res, next) => {
+router.post("/community/post/:postId/edit", fileUploader.single('post-image'), (req, res, next) => {
     const { postId } = req.params;
-    const { title, content } = req.body;
+    const { title, content, existingImage } = req.body;
 
-    PostSomething.findByIdAndUpdate(postId, { title, content }, { new: true })
+    let imageUrl;
+
+    if (req.file) {
+        imageUrl = req.file.path;
+    } else {
+        imageUrl = existingImage;
+    }
+
+    PostSomething.findByIdAndUpdate(postId, { title, content, imageUrl }, { new: true })
         .then(updatedPost => {
             res.redirect(`/community/post/${updatedPost.id}`); //redirect to post details page
         })
@@ -110,6 +134,8 @@ router.post('/community/post/:postId/delete', (req, res, next) => {
         .then(() => res.redirect('/community'))
         .catch(error => next(error));
 });
+
+
 
 
 module.exports = router;

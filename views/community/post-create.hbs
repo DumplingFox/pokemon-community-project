@@ -1,6 +1,6 @@
 <h1>This is post create page</h1>
 
-<form method="POST" action="/community/post/create">
+<form method="POST" action="/community/post/create" enctype="multipart/form-data">
 
     <label> Title:
         <input type="text" name="title">
@@ -9,5 +9,8 @@
     <label> Content:
         <input type="text" name="content">
     </label>
+
+    <input type="file" name="post-image" />
+
     <button type="submit">create</button>
 </form>

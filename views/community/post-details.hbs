@@ -1,7 +1,13 @@
 <section class="post-details">
 
+    <img src="{{imageUrl}}" alt="{{title}}">
+
     <h2>{{title}}</h2>
     <p>
         {{content}}
     </p>
+    <a href="/community/post/{{this._id}}/edit">update</a>
+    <form action="/community/post/{{this._id}}/delete" method="POST">
+        <button>Delete</button>
+    </form>
 </section>

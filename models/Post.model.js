@@ -11,8 +11,14 @@ const postSchema = new Schema(
             type: String,
             required: true
         },
+        imageUrl: {
+            type: String,
+            required: false
+        }
+    },
+    { timestamps: true }
 
-    }
+
 )
 
 const Post = model("Post", postSchema);
