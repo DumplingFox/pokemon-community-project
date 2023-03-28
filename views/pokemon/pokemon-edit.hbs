@@ -9,7 +9,17 @@
 
     <label> Type:
 
-        <select name="type" multiple>
+        <select name="type1" multiple>
+            {{#each typeEnum}}
+            <option value="{{this}}">{{this}}</option>
+            {{/each}}
+        </select>
+
+    </label>
+
+    <label> Second Type:
+
+        <select name="type2" multiple>
             {{#each typeEnum}}
             <option value="{{this}}">{{this}}</option>
             {{/each}}
