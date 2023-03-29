@@ -1,0 +1,152 @@
+indexNumber,name,type1,type2,height,weight,imgUrl,species
+1,Bulbasaur,grass,poison,0.7,6.9,/images/pokemon-seeds/bulbasaur.png,Seed Pokemon
+2,Ivysaur,grass,poison,1,13,/images/pokemon-seeds/ivysaur.png,Seed Pokemon
+3,Venusaur,grass,poison,2,100,/images/pokemon-seeds/venusaur.png,Seed Pokemon
+4,Charmander,fire,,0.6,8.5,/images/pokemon-seeds/charmander.png,Lizard Pokemon
+5,Charmeleon,fire,,1.1,19,/images/pokemon-seeds/charmeleon.png,Flame Pokemon
+6,Charizard,fire,flying,1.7,90.5,/images/pokemon-seeds/charizard.png,Flame Pokemon
+7,Squirtle,water,,0.5,9,/images/pokemon-seeds/squirtle.png,Tiny Turtle Pokemon
+8,Wartortle,water,,1,22.5,/images/pokemon-seeds/wartortle.png,Turtle Pokemon
+9,Blastoise,water,,1.6,85.5,/images/pokemon-seeds/blastoise.png,Shellfish Pokemon
+10,Caterpie,bug,,0.3,2.9,/images/pokemon-seeds/caterpie.png,Worm Pokemon
+11,Metapod,bug,,0.7,9.9,/images/pokemon-seeds/metapod.png,Cocoon Pokemon
+12,Butterfree,bug,flying,1.1,32,/images/pokemon-seeds/butterfree.png,Butterfly Pokemon
+13,Weedle,bug,poison,0.3,3.2,/images/pokemon-seeds/weedle.png,Hairy Bug Pokemon
+14,Kakuna,bug,poison,0.6,10,/images/pokemon-seeds/kakuna.png,Cocoon Pokemon
+15,Beedrill,bug,poison,1,29.5,/images/pokemon-seeds/beedrill.png,Poison Bee Pokemon
+16,Pidgey,normal,flying,0.3,1.8,/images/pokemon-seeds/pidgey.png,Tiny Bird Pokemon
+17,Pidgeotto,normal,flying,1.1,30,/images/pokemon-seeds/pidgeotto.png,Bird Pokemon
+18,Pidgeot,normal,flying,1.5,39.5,/images/pokemon-seeds/pidgeot.png,Bird Pokemon
+19,Rattata,normal,,0.3,3.5,/images/pokemon-seeds/rattata.png,Mouse Pokemon
+20,Raticate,normal,,0.7,18.5,/images/pokemon-seeds/raticate.png,Mouse Pokemon
+21,Spearow,normal,flying,0.3,2,/images/pokemon-seeds/spearow.png,Tiny Bird Pokemon
+22,Fearow,normal,flying,1.2,38,/images/pokemon-seeds/fearow.png,Beak Pokemon
+23,Ekans,poison,,2,6.9,/images/pokemon-seeds/ekans.png,Snake Pokemon
+24,Arbok,poison,,3.5,65,/images/pokemon-seeds/arbok.png,Cobra Pokemon
+25,Pikachu,electric,,0.4,6,/images/pokemon-seeds/pikachu.png,Mouse Pokemon
+26,Raichu,electric,,0.8,30,/images/pokemon-seeds/raichu.png,Mouse Pokemon
+27,Sandshrew,ground,,0.6,12,/images/pokemon-seeds/sandshrew.png,Mouse Pokemon
+28,Sandslash,ground,,1,29.5,/images/pokemon-seeds/sandslash.png,Mouse Pokemon
+29,Nidoran,poison,,0.4,7,/images/pokemon-seeds/nidoranF.png,Poisin Pin Pokemon
+30,Nidorina,poison,,0.8,20,/images/pokemon-seeds/nidorina.png,Poisin Pin Pokemon
+31,Nidoqueen,poison,ground,1.3,60,/images/pokemon-seeds/nidoqueen.png,Drill Pokemon
+32,Nidoran,poison,,0.5,9,/images/pokemon-seeds/nidoranM.png,Poisin Pin Pokemon
+33,Nidorino,poison,,0.9,19.5,/images/pokemon-seeds/nidorino.png,Poisin Pin Pokemon
+34,Nidoking,poison,ground,1.4,62,/images/pokemon-seeds/nidoking.png,Drill Pokemon
+35,Clefairy,normal,,0.6,7.5,/images/pokemon-seeds/clefairy.png,Fairy Pokemon
+36,Clefable,normal,,1.3,40,/images/pokemon-seeds/clefable.png,Fairy Pokemon
+37,Vulpix,fire,,0.6,9.9,/images/pokemon-seeds/vulpix.png,Fox Pokemon
+38,Ninetales,fire,,1.1,19.9,/images/pokemon-seeds/ninetales.png,Fox Pokemon
+39,Jigglypuff,normal,,0.5,5.5,/images/pokemon-seeds/jigglypuff.png,Balloon Pokemon
+40,Wigglytuff,normal,,1,12,/images/pokemon-seeds/wigglytuff.png,Balloon Pokemon
+41,Zubat,poison,flying,0.8,7.5,/images/pokemon-seeds/zubat.png,Bat Pokemon
+42,Golbat,poison,flying,1.6,55,/images/pokemon-seeds/golbat.png,Bat Pokemon
+43,Oddish,grass,poison,0.5,5.4,/images/pokemon-seeds/oddish.png,Weed Pokemon
+44,Gloom,grass,poison,0.8,8.6,/images/pokemon-seeds/gloom.png,Weed Pokemon
+45,Vileplume,grass,poison,1.2,18.6,/images/pokemon-seeds/vileplume.png,Flower Pokemon
+46,Paras,bug,grass,0.3,5.4,/images/pokemon-seeds/paras.png,Mushroom Pokemon
+47,Parasect,bug,grass,1,29.5,/images/pokemon-seeds/parasect.png,Mushroom Pokemon
+48,Venonat,bug,poison,1,30,/images/pokemon-seeds/venonat.png,Insect Pokemon
+49,Venomoth,bug,poison,1.5,12.5,/images/pokemon-seeds/venomoth.png,Poison Moth Pokemon
+50,Diglett,ground,,0.2,0.8,/images/pokemon-seeds/diglett.png,Mole Pokemon
+51,Dugtrio,ground,,0.7,33.3,/images/pokemon-seeds/dugtrio.png,Mole Pokemon
+52,Meowth,normal,,0.4,4.2,/images/pokemon-seeds/meowth.png,Scratch Cat Pokemon
+53,Persian,normal,,1,32,/images/pokemon-seeds/persian.png,Classy Cat Pokemon
+54,Psyduck,water,,0.8,19.6,/images/pokemon-seeds/psyduck.png,Duck Pokemon
+55,Golduck,water,,1.7,76.6,/images/pokemon-seeds/golduck.png,Duck Pokemon
+56,Mankey,fighting,,0.5,28,/images/pokemon-seeds/mankey.png,Pig Monkey Pokemon
+57,Primeape,fighting,,1,32,/images/pokemon-seeds/primeape.png,Pig Monkey Pokemon
+58,Growlithe,fire,,0.7,19,/images/pokemon-seeds/growlithe.png,Puppy Pokemon
+59,Arcanine,fire,,1.9,155,/images/pokemon-seeds/arcanine.png,Legendary Pokemon
+60,Poliwag,water,,0.6,12.4,/images/pokemon-seeds/poliwag.png,Tadpole Pokemon
+61,Poliwhirl,water,,1,20,/images/pokemon-seeds/poliwhirl.png,Tadpole Pokemon
+62,Poliwrath,water,fighting,1.3,54,/images/pokemon-seeds/poliwrath.png,Tadpole Pokemon
+63,Abra,psychic,,0.9,19.5,/images/pokemon-seeds/abra.png,Psi Pokemon
+64,Kadabra,psychic,,1.3,56.5,/images/pokemon-seeds/kadabra.png,Psi Pokemon
+65,Alakazam,psychic,,1.5,48,/images/pokemon-seeds/alakazam.png,Psi Pokemon
+66,Machop,fighting,,0.8,19.5,/images/pokemon-seeds/machop.png,Superpower Pokemon
+67,Machoke,fighting,,1.5,70.5,/images/pokemon-seeds/machoke.png,Superpower Pokemon
+68,Machamp,fighting,,1.6,130,/images/pokemon-seeds/machamp.png,Superpower Pokemon
+69,Bellsprout,grass,poison,0.7,4,/images/pokemon-seeds/bellsprout.png,Flower Pokemon
+70,Weepinbell,grass,poison,1,6.4,/images/pokemon-seeds/weepinbell.png,Flycatcher Pokemon
+71,Victreebel,grass,poison,1.7,15.5,/images/pokemon-seeds/victreebel.png,Flycatcher Pokemon
+72,Tentacool,water,poison,0.9,45.5,/images/pokemon-seeds/tentacool.png,Jellyfish Pokemon
+73,Tentacruel,water,poison,1.6,55,/images/pokemon-seeds/tentacruel.png,Jellyfish Pokemon
+74,Geodude,rock,ground,0.4,20,/images/pokemon-seeds/geodude.png,Rock Pokemon
+75,Graveler,rock,ground,1,105,/images/pokemon-seeds/graveler.png,Rock Pokemon
+76,Golem,rock,ground,1.4,300,/images/pokemon-seeds/golem.png,Megaton Pokemon
+77,Ponyta,fire,,1,30,/images/pokemon-seeds/ponyta.png,Fire Horse Pokemon
+78,Rapidash,fire,,1.7,95,/images/pokemon-seeds/rapidash.png,Fire Horse Pokemon
+79,Slowpoke,water,psychic,1.2,36,/images/pokemon-seeds/slowpoke.png,Dopey Pokemon
+80,Slowbro,water,psychic,1.6,78.5,/images/pokemon-seeds/slowbro.png,Hermit Crab Pokemon
+81,Magnemite,electric,,0.3,6,/images/pokemon-seeds/magnemite.png,Magnet Pokemon
+82,Magneton,electric,,1,60,/images/pokemon-seeds/magneton.png,Magnet Pokemon
+83,Farfetchd,normal,flying,0.8,15,/images/pokemon-seeds/farfetchd.png,Wild Duck Pokemon
+84,Doduo,normal,flying,1.4,39.2,/images/pokemon-seeds/doduo.png,Twin Bird Pokemon
+85,Dodrio,normal,flying,1.8,85.2,/images/pokemon-seeds/dodrio.png,Triple Bird Pokemon
+86,Seel,water,,1.1,90,/images/pokemon-seeds/seel.png,Sea Lion Pokemon
+87,Dewgong,water,ice,1.7,120,/images/pokemon-seeds/dewgong.png,Sea Lion Pokemon
+88,Grimer,poison,,0.9,30,/images/pokemon-seeds/grimer.png,Sludge Pokemon
+89,Muk,poison,,1.2,30,/images/pokemon-seeds/muk.png,Sludge Pokemon
+90,Shellder,water,,0.3,4,/images/pokemon-seeds/shellder.png,Bivalve Pokemon
+91,Cloyster,water,ice,1.5,132.5,/images/pokemon-seeds/cloyster.png,Bivalve Pokemon
+92,Gastly,ghost,poison,1.3,0.1,/images/pokemon-seeds/gastly.png,Gas Pokemon
+93,Haunter,ghost,poison,1.6,0.1,/images/pokemon-seeds/haunter.png,Gas Pokemon
+94,Gengar,ghost,poison,1.5,40.5,/images/pokemon-seeds/gengar.png,Shadow Pokemon
+95,Onix,rock,ground,8.8,210,/images/pokemon-seeds/onix.png,Rock Snake Pokemon
+96,Drowzee,psychic,,1,32.4,/images/pokemon-seeds/drowzee.png,Hypnosis Pokemon
+97,Hypno,psychic,,1.6,75.6,/images/pokemon-seeds/hypno.png,Hypnosis Pokemon
+98,Krabby,water,,0.4,6.5,/images/pokemon-seeds/krabby.png,River Crab Pokemon
+99,Kingler,water,,1.3,60,/images/pokemon-seeds/kingler.png,Pincer Pokemon
+100,Voltorb,electric,,0.5,10.4,/images/pokemon-seeds/voltorb.png,Ball Pokemon
+101,Electrode,electric,,1.2,66.6,/images/pokemon-seeds/electrode.png,Ball Pokemon
+102,Exeggcute,grass,psychic,0.4,2.5,/images/pokemon-seeds/exeggcute.png,Egg Pokemon
+103,Exeggutor,grass,psychic,2,120,/images/pokemon-seeds/exeggutor.png,Coconut Pokemon
+104,Cubone,ground,,0.4,6.5,/images/pokemon-seeds/cubone.png,Lonely Pokemon
+105,Marowak,ground,,1,45,/images/pokemon-seeds/marowak.png,Bone Keeper Pokemon
+106,Hitmonlee,fighting,,1.5,49.8,/images/pokemon-seeds/hitmonlee.png,Kickin Pokemon
+107,Hitmonchan,fighting,,1.4,50.2,/images/pokemon-seeds/hitmonchan.png,Punching Pokemon
+108,Lickitung,normal,,1.2,65.5,/images/pokemon-seeds/lickitung.png,Licking Pokemon
+109,Koffing,poison,,0.6,1,/images/pokemon-seeds/koffing.png,Poison Gas Pokemon
+110,Weezing,poison,,1.2,9.5,/images/pokemon-seeds/weezing.png,Poison Gas Pokemon
+111,Rhyhorn,ground,rock,1,115,/images/pokemon-seeds/rhyhorn.png,Spikes Pokemon
+112,Rhydon,ground,rock,1.9,120,/images/pokemon-seeds/rhydon.png,Drill Pokemon
+113,Chansey,normal,,1.1,34.6,/images/pokemon-seeds/chansey.png,Egg Pokemon
+114,Tangela,grass,,1,35,/images/pokemon-seeds/tangela.png,Vine Pokemon
+115,Kangaskhan,normal,,2.2,80,/images/pokemon-seeds/kangaskhan.png,Parent Pokemon
+116,Horsea,water,,0.4,8,/images/pokemon-seeds/horsea.png,Dragon Pokemon
+117,Seadra,water,,1.2,25,/images/pokemon-seeds/seadra.png,Dragon Pokemon
+118,Goldeen,water,,0.6,15,/images/pokemon-seeds/goldeen.png,Goldfish Pokemon
+119,Seaking,water,,1.3,39,/images/pokemon-seeds/seaking.png,Goldfish Pokemon
+120,Staryu,water,,0.8,34.5,/images/pokemon-seeds/staryu.png,Star Shape Pokemon
+121,Starmie,water,psychic,1.1,80,/images/pokemon-seeds/starmie.png,Mysterious Pokemon
+122,MrMime,psychic,,1.3,54.5,/images/pokemon-seeds/mrmime.png,Barrier Pokemon
+123,Scyther,bug,flying,1.5,56,/images/pokemon-seeds/scyther.png,Mantis Pokemon
+124,Jynx,ice,psychic,1.4,40.6,/images/pokemon-seeds/jynx.png,Human Shape Pokemon
+125,Electabuzz,electric,,1.1,30,/images/pokemon-seeds/electabuzz.png,Electric Pokemon
+126,Magmar,fire,,1.3,44.5,/images/pokemon-seeds/magmar.png,Spitfire Pokemon
+127,Pinsir,bug,,1.5,55,/images/pokemon-seeds/pinsir.png,Stag Beetle Pokemon
+128,Tauros,normal,,1.4,88.4,/images/pokemon-seeds/tauros.png,Wild Bull Pokemon
+129,Magikarp,water,,0.9,10,/images/pokemon-seeds/magikarp.png,Fish Pokemon
+130,Gyarados,water,flying,6.5,235,/images/pokemon-seeds/gyarados.png,Atrocious Pokemon
+131,Lapras,water,ice,2.5,220,/images/pokemon-seeds/lapras.png,Transport Pokemon
+132,Ditto,normal,,0.3,4,/images/pokemon-seeds/ditto.png,Transform Pokemon
+133,Eevee,normal,,0.3,6.5,/images/pokemon-seeds/eevee.png,Evolution Pokemon
+134,Vaporeon,water,,1,29,/images/pokemon-seeds/vaporeon.png,Bubble Jet Pokemon
+135,Jolteon,electric,,0.8,24.5,/images/pokemon-seeds/jolteon.png,Lightning Pokemon
+136,Flareon,fire,,0.9,25,/images/pokemon-seeds/flareon.png,Flame Pokemon
+137,Porygon,normal,,0.8,36.5,/images/pokemon-seeds/porygon.png,Virtual Pokemon
+138,Omanyte,rock,water,0.4,7.5,/images/pokemon-seeds/omanyte.png,Spiral Pokemon
+139,Omastar,rock,water,1,35,/images/pokemon-seeds/omastar.png,Spiral Pokemon
+140,Kabuto,rock,water,0.5,11.5,/images/pokemon-seeds/kabuto.png,Shellfish Pokemon
+141,Kabutops,rock,water,1.3,40.5,/images/pokemon-seeds/kabutops.png,Shellfish Pokemon
+142,Aerodactyl,rock,flying,1.8,59,/images/pokemon-seeds/aerodactyl.png,Fossil Pokemon
+143,Snorlax,normal,,2.1,460,/images/pokemon-seeds/snorlax.png,Sleeping Pokemon
+144,Articuno,ice,flying,1.7,55.4,/images/pokemon-seeds/articuno.png,Freeze Pokemon
+145,Zapdos,electric,flying,1.6,52.6,/images/pokemon-seeds/zapdos.png,Electric Pokemon
+146,Moltres,fire,flying,2,60,/images/pokemon-seeds/moltres.png,Flame Pokemon
+147,Dratini,dragon,,1.8,3.3,/images/pokemon-seeds/dratini.png,Dragon Pokemon
+148,Dragonair,dragon,,4,16.5,/images/pokemon-seeds/dragonair.png,Dragon Pokemon
+149,Dragonite,dragon,flying,2.2,210,/images/pokemon-seeds/dragonite.png,Dragon Pokemon
+150,Mewtwo,psychic,,2,122,/images/pokemon-seeds/mewtwo.png,Genetic Pokemon
+151,Mew,psychic,,0.4,4,/images/pokemon-seeds/mew.jpeg,New Species Pokemon

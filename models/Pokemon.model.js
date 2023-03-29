@@ -6,9 +6,16 @@ const pokemonSchema = new Schema(
             type: String,
             required: true,
         },
-        type: {
-            type: [String],
+        type1: {
+            type: String,
             enum: ["bug", "dragon", "electric", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "water"],
+            required: true
+        },
+        type2: {
+            type: String,
+            enum: ["bug", "dragon", "electric", "fighting", "fire", "flying", "ghost", "grass", "ground", "ice", "normal", "poison", "psychic", "rock", "water", ""],
+            required: false,
+            default: ''
         },
         species: {
             type: String,
