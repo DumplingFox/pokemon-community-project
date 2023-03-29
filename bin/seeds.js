@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Pokemon = require('../models/pokemon.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/myproject';
+const MONGO_URI = "mongodb+srv://pokemon:ilovepokemon@cluster0.1hutlhz.mongodb.net/pokemon?retryWrites=true&w=majority";
 
 const fs = require("fs");
 const Papa = require("papaparse");
@@ -31,4 +31,4 @@ mongoose
     })
     .catch((err) => {
         console.error("Error connecting to DB: ", err);
-      });
+    });

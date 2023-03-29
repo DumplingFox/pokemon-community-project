@@ -91,7 +91,7 @@ router.get("/community/post/:postId", isLoggedIn, isLoggedOut, (req, res, next) 
 
 // UPDATE: GET post
 
-router.get("/community/post/:postId/edit", (req, res, next) => {
+router.get("/community/post/:postId/edit", isLoggedIn, isLoggedOut, (req, res, next) => {
     const { postId } = req.params;
 
     let postDetails;
@@ -112,7 +112,7 @@ router.get("/community/post/:postId/edit", (req, res, next) => {
 
 // UPDATE: POST post
 
-router.post("/community/post/:postId/edit", fileUploader.single('post-image'), (req, res, next) => {
+router.post("/community/post/:postId/edit", isLoggedIn, isLoggedOut, fileUploader.single('post-image'), (req, res, next) => {
     const { postId } = req.params;
     const { title, content, existingImage } = req.body;
 
@@ -132,7 +132,7 @@ router.post("/community/post/:postId/edit", fileUploader.single('post-image'), (
 });
 
 //DELETE post
-router.post('/community/post/:postId/delete', (req, res, next) => {
+router.post('/community/post/:postId/delete', isLoggedIn, isLoggedOut, (req, res, next) => {
     const { postId } = req.params;
 
     PostSomething.findByIdAndDelete(postId)
