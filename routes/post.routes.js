@@ -4,7 +4,7 @@ const app = express();
 const multer = require('multer')
 
 //importing mongoose schema file
-const Upload = require("../models/Upload.model");
+//const Upload = require("../models/Upload.model");
 
 // require cloudinary
 const fileUploader = require('../config/cloudinary.config');
@@ -13,13 +13,13 @@ const fileUploader = require('../config/cloudinary.config');
 const PostSomething = require("../models/Post.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
-// const isLoggedOut = require("../middleware/isLoggedOut");
-// const isLoggedIn = require("../middleware/isLoggedIn");
-
+const isLoggedOut = require("../middleware/isLoggedOut");
+const isLoggedIn = require("../middleware/isLoggedIn");
+const isUser = require("../middleware/isOwner");
 
 
 //READ: list of posts from community
-router.get("/community", (req, res, next) => {
+router.get("/community", isLoggedIn, isLoggedOut, (req, res, next) => {
     PostSomething.find()
         .then(postArr => {
             const data = {
@@ -35,17 +35,21 @@ router.get("/community", (req, res, next) => {
 
 //CREATE : GET post
 
-router.get("/community/post/create", (req, res, next) => {
-
+router.get("/community/post/:userId/create", isLoggedIn, isLoggedOut, (req, res, next) => {
+    const { userId } = req.params;
     res.render("community/post-create");
 
 })
 
 // CREATE: POST posts
 
-router.post("/community/post/create", fileUploader.single('post-image'), (req, res, next) => {
+router.post("/community/post/:userId/create", fileUploader.single('post-image'), isLoggedIn, isLoggedOut, (req, res, next) => {
 
     const { title, content } = req.body;
+    const { userId } = req.params;
+
+
+
     if (req.file) {
         PostSomething.create({ title, content, imageUrl: req.file.path })
             .then(responseFromDB => {
@@ -69,11 +73,12 @@ router.post("/community/post/create", fileUploader.single('post-image'), (req, r
 })
 
 //READ: post details
-router.get("/community/post/:postId", (req, res, next) => {
+router.get("/community/post/:postId", isLoggedIn, isLoggedOut, (req, res, next) => {
 
     const { postId } = req.params;
 
     PostSomething.findById(postId)
+        .populate("User")
         .then(postDetails => {
             res.render("community/post-details", postDetails);
         })
