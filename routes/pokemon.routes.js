@@ -1,5 +1,9 @@
 const express = require('express');
 const Pokemon = require('../models/Pokemon.model');
+const app = express();
+const multer = require('multer');
+
+const fileUploader = require('../config/cloudinary.config');
 
 const router = express.Router();
 
@@ -24,26 +28,18 @@ router.get("/pokemon", (req, res, next) => {
 router.get("/pokemon/create", (req, res, next) => {
 
     const type1Enum = Pokemon.schema.path('type1').enumValues;
-    const type2Enum = Pokemon.schema.path('type2').enumValues
+    const type2Enum = Pokemon.schema.path('type2').enumValues;
 
     res.render("pokemon/pokemon-create", { type1Enum, type2Enum });
 })
 
 // CREATE: post
-router.post("/pokemon/create", (req, res, next) => {
 
-    const pokemonDetails = {
-        name: req.body.name,
-        type1: req.body.type1,
-        type2: req.body.type2,
-        species: req.body.species,
-        indexNumber: req.body.indexNumber,
-        height: req.body.height,
-        weight: req.body.weight,
-        imgUrl: req.body.imgUrl
-    }
+router.post("/pokemon/create", fileUploader.single('poke-img'), (req, res, next) => {
 
-    Pokemon.create(pokemonDetails)
+    const { name, type1, type2, species, indexNumber, height, weight } = req.body;
+
+    Pokemon.create({ name, type1, type2, species, indexNumber, height, weight, imgUrl: req.file.path })
         .then(pokemonCard => {
             res.redirect("/pokemon")
         })
@@ -56,12 +52,13 @@ router.post("/pokemon/create", (req, res, next) => {
 // UPDATE (get): 
 router.get("/pokemon/:pokemonId/edit", (req, res, next) => {
 
-    const typeEnum = Pokemon.schema.path('type').enumValues;
+    const type1Enum = Pokemon.schema.path('type1').enumValues;
+    const type2Enum = Pokemon.schema.path('type2').enumValues;
     const pokemonId = req.params.pokemonId;
 
     Pokemon.findById(pokemonId)
         .then(pokemonToUpdate => {
-            res.render('pokemon/pokemon-edit', { pokemon: pokemonToUpdate, typeEnum });
+            res.render('pokemon/pokemon-edit', { pokemon: pokemonToUpdate, type1Enum, type2Enum });
     })
     .catch(e => {
         console.log("error getting pokemon details from DB", e);

@@ -19,11 +19,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
-    region: {
-      type: String,
-      required: true,
-      enum: ["Africa", "Asia", "Australia", "Europe", "Middle East", "North America", "South America", "New Zealand"]
-    },
     imgUrl: {
       type: String,
       required: false,
