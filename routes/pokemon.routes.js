@@ -23,9 +23,10 @@ router.get("/pokemon", (req, res, next) => {
 // CREATE: get form
 router.get("/pokemon/create", (req, res, next) => {
 
-    const typeEnum = Pokemon.schema.path('type').enumValues;
+    const type1Enum = Pokemon.schema.path('type1').enumValues;
+    const type2Enum = Pokemon.schema.path('type2').enumValues
 
-    res.render("pokemon/pokemon-create", { typeEnum });
+    res.render("pokemon/pokemon-create", { type1Enum, type2Enum });
 })
 
 // CREATE: post
@@ -33,7 +34,8 @@ router.post("/pokemon/create", (req, res, next) => {
 
     const pokemonDetails = {
         name: req.body.name,
-        type: req.body.type,
+        type1: req.body.type1,
+        type2: req.body.type2,
         species: req.body.species,
         indexNumber: req.body.indexNumber,
         height: req.body.height,
