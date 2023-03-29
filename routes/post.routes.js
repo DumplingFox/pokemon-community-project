@@ -132,6 +132,26 @@ router.post("/community/post/:postId/edit", isLoggedIn, isOwner, fileUploader.si
         .catch(error => next(error));
 });
 
+//GET my-post
+//READ: list of posts from community
+router.get("/community/my-posts", isLoggedIn, (req, res, next) => {
+    const userId = req.session.currentUser._id;
+
+    PostSomething.find({ createdBy: userId })
+        .then(postArr => {
+            const data = {
+                post: postArr
+            }
+            res.render("community/my-posts", data)
+        })
+        .catch(e => {
+            console.log("error getting posts from DB", e);
+            next(e);
+        })
+})
+
+
+
 //DELETE post
 router.post('/community/post/:postId/delete', isLoggedIn, isOwner, (req, res, next) => {
     const { postId } = req.params;
