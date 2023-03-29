@@ -15,11 +15,11 @@ const PostSomething = require("../models/Post.model");
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
-const isUser = require("../middleware/isOwner");
+const isOwner = require("../middleware/isOwner");
 
 
 //READ: list of posts from community
-router.get("/community", isLoggedIn, isLoggedOut, (req, res, next) => {
+router.get("/community", isLoggedIn, (req, res, next) => {
     PostSomething.find()
         .then(postArr => {
             const data = {
@@ -35,7 +35,7 @@ router.get("/community", isLoggedIn, isLoggedOut, (req, res, next) => {
 
 //CREATE : GET post
 
-router.get("/community/post/:userId/create", isLoggedIn, isLoggedOut, (req, res, next) => {
+router.get("/community/post/create", isLoggedIn, (req, res, next) => {
     const { userId } = req.params;
     res.render("community/post-create");
 
@@ -43,15 +43,15 @@ router.get("/community/post/:userId/create", isLoggedIn, isLoggedOut, (req, res,
 
 // CREATE: POST posts
 
-router.post("/community/post/:userId/create", fileUploader.single('post-image'), isLoggedIn, isLoggedOut, (req, res, next) => {
+router.post("/community/post/create", fileUploader.single('post-image'), isLoggedIn, (req, res, next) => {
 
     const { title, content } = req.body;
-    const { userId } = req.params;
+    const userId = req.session.currentUser._id;
 
 
 
     if (req.file) {
-        PostSomething.create({ title, content, imageUrl: req.file.path })
+        PostSomething.create({ title, content, imageUrl: req.file.path, createdBy: userId })
             .then(responseFromDB => {
                 res.redirect("/community");
             })
@@ -60,7 +60,7 @@ router.post("/community/post/:userId/create", fileUploader.single('post-image'),
                 next(e);
             })
     } else {
-        PostSomething.create({ title, content })
+        PostSomething.create({ title, content, createdBy: userId })
             .then(responseFromDB => {
                 res.redirect("/community");
             })
@@ -73,12 +73,11 @@ router.post("/community/post/:userId/create", fileUploader.single('post-image'),
 })
 
 //READ: post details
-router.get("/community/post/:postId", isLoggedIn, isLoggedOut, (req, res, next) => {
+router.get("/community/post/:postId", isLoggedIn, (req, res, next) => {
 
     const { postId } = req.params;
 
     PostSomething.findById(postId)
-        .populate("User")
         .then(postDetails => {
             res.render("community/post-details", postDetails);
         })
@@ -91,7 +90,7 @@ router.get("/community/post/:postId", isLoggedIn, isLoggedOut, (req, res, next) 
 
 // UPDATE: GET post
 
-router.get("/community/post/:postId/edit", isLoggedIn, isLoggedOut, (req, res, next) => {
+router.get("/community/post/:postId/edit", isOwner, isLoggedIn, (req, res, next) => {
     const { postId } = req.params;
 
     let postDetails;
@@ -112,8 +111,10 @@ router.get("/community/post/:postId/edit", isLoggedIn, isLoggedOut, (req, res, n
 
 // UPDATE: POST post
 
-router.post("/community/post/:postId/edit", isLoggedIn, isLoggedOut, fileUploader.single('post-image'), (req, res, next) => {
+router.post("/community/post/:postId/edit", isLoggedIn, isOwner, fileUploader.single('post-image'), (req, res, next) => {
     const { postId } = req.params;
+    const userId = req.session.currentUser._id;
+
     const { title, content, existingImage } = req.body;
 
     let imageUrl;
@@ -124,7 +125,7 @@ router.post("/community/post/:postId/edit", isLoggedIn, isLoggedOut, fileUploade
         imageUrl = existingImage;
     }
 
-    PostSomething.findByIdAndUpdate(postId, { title, content, imageUrl }, { new: true })
+    PostSomething.findByIdAndUpdate(postId, { title, content, imageUrl, userId }, { new: true })
         .then(updatedPost => {
             res.redirect(`/community/post/${updatedPost.id}`); //redirect to post details page
         })
@@ -132,7 +133,7 @@ router.post("/community/post/:postId/edit", isLoggedIn, isLoggedOut, fileUploade
 });
 
 //DELETE post
-router.post('/community/post/:postId/delete', isLoggedIn, isLoggedOut, (req, res, next) => {
+router.post('/community/post/:postId/delete', isLoggedIn, isOwner, (req, res, next) => {
     const { postId } = req.params;
 
     PostSomething.findByIdAndDelete(postId)
