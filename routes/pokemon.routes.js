@@ -80,19 +80,6 @@ router.post('/pokemon/:pokemonId/edit', (req, res, next) => {
       });
 });
 
-// DELETE
-router.post("/pokemon/:pokemonId/delete", (req, res, next) => {
-    const pokemonId = req.params.pokemonId; 
-
-    Pokemon.findByIdAndDelete(pokemonId)
-        .then(res.redirect("/pokemon"))
-        .catch(e => {
-            console.log("error deleting pokemon", e);
-            next(e);
-          });
-})
-
-
 // READ: pokemon details
 router.get("/pokemon/:pokemonId", (req, res, next) => {
 
@@ -106,6 +93,40 @@ router.get("/pokemon/:pokemonId", (req, res, next) => {
             console.log("error getting pokemon details from DB", e);
             next(e);
         });
+})
+
+// LIKE
+router.post("/pokemon/:pokemonId/like", (req, res) => {
+    const pokemonId = req.params.pokemonId;
+  
+    Pokemon.findById(pokemonId)
+      .then((pokemon) => {
+        if (!pokemon) {
+          return res.status(404).send("Pokemon not found");
+        }
+  
+        pokemon.likes++;
+        return pokemon.save();
+      })
+      .then(() => {
+        res.send("Pokemon liked");
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Server error");
+      });
+  });
+
+// DELETE
+router.post("/pokemon/:pokemonId/delete", (req, res, next) => {
+    const pokemonId = req.params.pokemonId; 
+
+    Pokemon.findByIdAndDelete(pokemonId)
+        .then(res.redirect("/pokemon"))
+        .catch(e => {
+            console.log("error deleting pokemon", e);
+            next(e);
+          });
 })
 
 module.exports = router;

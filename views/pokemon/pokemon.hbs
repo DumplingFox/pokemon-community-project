@@ -10,14 +10,16 @@
                 <h5 class="card-title">{{this.name}}</h5>
                 <p class="card-text">{{this.species}}</p>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Type: {{this.type1}} {{this.type2}}</li>
-                <li class="list-group-item">Height: {{this.height}}</li>
-                <li class="list-group-item">Weight: {{this.weight}}</li>
-            </ul>
             <div class="card-body">
-                <a href="/pokemon/{{this._id}}" class="card-link">Details</a>
-                <a href="/pokemon/{{this._id}}/edit" class="card-link">Edit</a>
+                <div class="d-flex justify-content-between">
+                    <a href="/pokemon/{{this._id}}" class="card-link">
+                        <button type="button" class="btn btn-outline-success">Details</button>
+                    </a>
+
+                    <form action="/pokemon/{{this._id}}/like" method="POST">
+                        <button type="submit" class="btn btn-outline-danger"><span class="fa fa-heart-o"></span> {{this.likes}}</button>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

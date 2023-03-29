@@ -30,6 +30,10 @@ const pokemonSchema = new Schema(
         weight: Number, 
         imgUrl: {
             type: String
+        },
+        likes: { 
+            type: Number,
+             default: 0 
         }
     }
 )

@@ -15,3 +15,6 @@ h1 {
   text-decoration: none;
 }
 
+#delete-button {
+  display: inline;
+}
