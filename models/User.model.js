@@ -19,11 +19,14 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+<<<<<<< HEAD
     region: {
       type: String,
       required: false,
       enum: ["Africa", "Asia", "Australia", "Europe", "Middle East", "North America", "South America", "New Zealand"]
     },
+=======
+>>>>>>> 188d344854527ee957c5bed947dcba890e1b3b35
     imgUrl: {
       type: String,
       required: false,

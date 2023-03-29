@@ -1,52 +1,78 @@
 <h1>Add a new pokemon!</h1>
 
-<form method="POST" action="/pokemon/create">
 
-    <label> Name:
-        <input type="text" name="name">
-    </label>
+<div class="card" style="width: 50vw">
+  <div class="card-body">
+    <h5 class="card-title">Pokemon Details</h5>
+    
+    <form class="row g-3" method="POST" action="/pokemon/create" enctype="multipart/form-data">
+    <div class="col-md-5">
+        <label class="form-label"> Name:
+            <input type="text" class="form-control" id="name" name="name">
+        </label>
+    </div>
 
-    <label> Type:
+    <div class="col-md-5">
+        <label class="form-label"> Species:
+            <input type="text" class="form-control" id="species" name="species">
+        </label>
+    </div>
 
-        <select name="type1" multiple>
-            {{#each type1Enum}}
-            <option value="{{this}}">{{this}}</option>
-            {{/each}}
-        </select>
+    <div class="col-2">
+        <label class="form-label">National No.:
+            <input type="number" class="form-control" id="indexNumber" min="1" name="indexNumber">
+        </label>
+    </div>
 
-    </label>
+    <div class="col-md-6">
+        <label for="inputState" class="form-label"> Type:
+            <select id="inputType1" class="form-select" name="type1">
+                <option value="" disabled selected>Select a type</option>
+                {{#each type1Enum}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </div>
 
-    <label> Second Type (opt.):
+    <div class="col-md-6">
+        <label for="inputState" class="form-label"> Second Type (opt.):
+            <select id="inputType2" class="form-select" name="type2">
+                <option value="" disabled selected>Select a type</option>
+                {{#each type2Enum}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </label>
+    </div>
 
-        <select name="type2" multiple>
-            {{#each type2Enum}}
-            <option value="{{this}}">{{this}}</option>
-            {{/each}}
-        </select>
+    <div class="col-6">
+        <label class="form-label">Height:
+            <input type="number" class="form-control" id="height" name="height">
+        </label>
+    </div>
 
-    </label>
+     <div class="col-6">
+        <label class="form-label">Weight:
+            <input type="number" class="form-control" id="weight" name="weight">
+        </label>
+    </div>
 
-    <label> Species:
-        <input type="text" name="species">
-    </label>
+    <div class="col-6">
+        <label class="form-label">Image:
+            <input type="file" class="form-control" name="poke-img">
+        </label>
+    </div>
 
-    <label> National No.:
-        <input type="number" name="indexNumber" min="1">
-    </label>
-
-    <label> Height:
-        <input type="number" name="height">
-    </label>
-
-    <label> Weight:
-        <input type="number" name="weight">
-    </label>
-
-    <label> Pokemon Image:
-        <input type="text" placeholder="paste URL here" name="imgUrl">
-    </label>
-
-
-    <button type="submit"> Create </button>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Add Pokemon</button>
+  </div>
 
 </form>
+
+
+  </div>
+</div>
+
+
+
