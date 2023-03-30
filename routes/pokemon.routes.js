@@ -99,6 +99,7 @@ router.get("/pokemon/:pokemonId", (req, res, next) => {
 
 // LIKE pokemon
 router.post("/pokemon/:pokemonId/like", (req, res) => {
+  /*
   const pokemonId = req.params.pokemonId;
   const currentUser = req.session.currentUser;
 
@@ -120,33 +121,34 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
       res.status(500).send("Server error");
     });
 });
-const pokemonId = req.params.pokemonId;
-const currentUser = req.session.currentUser;
+ */
+  const pokemonId = req.params.pokemonId;
+  const currentUser = req.session.currentUser;
 
-Pokemon.findById(pokemonId)
-  .then((pokemon) => {
-    if (!pokemon.likedBy) {
-      pokemon.likedBy = [];
-    }
+  Pokemon.findById(pokemonId)
+    .then((pokemon) => {
+      if (!pokemon.likedBy) {
+        pokemon.likedBy = [];
+      }
 
-    if (!pokemon.likedBy.includes(currentUser)) {
-      pokemon.likes++;
-      pokemon.likedBy.push(currentUser);
-    } else {
-      pokemon.likes--;
-      pokemon.likedBy = pokemon.likedBy.filter((user) => user !== currentUser);
-    }
+      if (!pokemon.likedBy.includes(currentUser)) {
+        pokemon.likes++;
+        pokemon.likedBy.push(currentUser);
+      } else {
+        pokemon.likes--;
+        pokemon.likedBy = pokemon.likedBy.filter((user) => user !== currentUser);
+      }
 
-    return pokemon.save();
-  })
-  .then(() => {
-    res.redirect("/pokemon");
-  })
-  .catch((err) => {
-    console.error(err);
-    res.status(500).send("Server error");
-  });
-  });
+      return pokemon.save();
+    })
+    .then(() => {
+      res.redirect("/pokemon");
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send("Server error");
+    });
+});
 
 router.get("/my-account", (req, res, next) => {
   const currentUserId = req.session.currentUser._id;
