@@ -1,17 +1,21 @@
-<h2>This is my posts</h2>
+<div class="container">
+    <h2 class="text-center my-4">This is my posts</h2>
 
-<div class="row row-cols-1 row-cols-md-3 g-4">
-    {{#each post}}
-    <div class="col">
-        <div class="card">
-            <img src="{{this.imageUrl}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text">{{this.content}}</p>
-                <a href="/community/post/{{this._id}}/edit">update</a>
-                <a href="/community/post/{{this._id}}">more details</a>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+        {{#each post}}
+        <div class="col">
+            <div class="card h-100">
+                <img src="{{this.imageUrl}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">{{this.content}}</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/community/post/{{this._id}}/edit" class="btn btn-warning">Update</a>
+                    <a href="/community/post/{{this._id}}" class="btn btn-primary">More Details</a>
+                </div>
             </div>
         </div>
+        {{/each}}
     </div>
-    {{/each}}
 </div>

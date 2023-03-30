@@ -23,6 +23,13 @@ const projectName = "pokemon-gogogo";
 
 app.locals.appTitle = `${capitalize(projectName)} created with IronLauncher`;
 
+// checkLogin
+const checkLoggin = (req, res, next) => {
+    res.locals.currentUser = req.session.currentUser;
+    next();
+};
+app.use(checkLoggin);
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
@@ -32,8 +39,6 @@ app.use("/auth", authRoutes);
 
 app.use("/", require("./routes/pokemon.routes"));
 
-const adminRoutes = require("./routes/admin.routes");
-app.use("/", adminRoutes);
 
 app.use("/", require("./routes/post.routes"));
 

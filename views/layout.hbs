@@ -63,24 +63,21 @@
             My Account
           </button>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/auth/login">Login</a></li>
-            <li>
-              <hr class="dropdown-divider">
-            </li>
+            {{#if currentUser}}
             <li><a class="dropdown-item" href="/my-account">My Account</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="/auth/signup">Register</a></li>
+            <li><a class="dropdown-item" href="/auth/logout">Log Out</a></li>
+            {{else}}
+            <li><a class="dropdown-item" href="/auth/login">Login</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="/auth/logout">Log Out</a></li>
+            <li><a class="dropdown-item" href="/auth/signup">Register</a></li>
+            {{/if}}
           </ul>
         </div>
-
-
-
       </div>
     </div>
   </nav>
