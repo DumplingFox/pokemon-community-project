@@ -1,32 +1,36 @@
-<h1>This is post create page</h1>
+<div class="container mt-5">
 
-<div class="card" style="width: 50vw">
-    <div class="card-body">
-        <h5 class="card-title">Pokemon Details</h5>
-        <form method="POST" action="/community/post/create" enctype="multipart/form-data">
+    <h1>create a new post!</h1>
 
-            <div class="col-md-12">
-                <label class="form-label"> Title:
-                    <input type="text" class="form-control" name="title">
-                </label>
-            </div>
+    <div class="card mt-4" style="width: 50vw">
+        <div class="card-body">
+            <h5 class="card-title">Pokemon Details</h5>
+            <form method="POST" action="/community/post/create" enctype="multipart/form-data">
 
-            <div class="col-md-12">
-                <label class="form-label"> Write your post here:
-                   <textarea class="form-control" cols="30" rows="4" name="content"> </textarea>
-                </label>
-            </div>
+                <div class="col-md-12">
+                    <label class="form-label"> Title:
+                        <input type="text" class="form-control" name="title">
+                    </label>
+                </div>
 
-            <div class="col-6">
-                <label class="form-label">Image:
-                    <input type="file" class="form-control" name="post-image">
-                </label>
-            </div>
+                <div class="col-md-12">
+                    <label class="form-label"> Write your post here:
+                        <textarea class="form-control" cols="30" rows="4" name="content"> </textarea>
+                    </label>
+                </div>
 
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Upload Post</button>
-            </div>
+                <div class="col-6">
+                    <label class="form-label">Image:
+                        <input type="file" class="form-control" name="post-image">
+                    </label>
+                </div>
 
-      </form>
+                <div class="col-12">
+                    <button type="submit" class="btn btn-primary">Upload Post</button>
+                </div>
+
+            </form>
+        </div>
     </div>
+
 </div>

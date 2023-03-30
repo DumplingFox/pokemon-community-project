@@ -1,18 +1,35 @@
-<h2>Edit the post: {{post.title}}</h2>
+<div class="container mt-5">
 
-<form action="/community/post/{{post._id}}/edit" method="post" enctype="multipart/form-data">
-    <label> Title:
-        <input type="text" name="title" value="{{post.title}}" />
-    </label>
-    <label> Content:
-        <input type="text" name="content" value="{{post.content}}" />
-    </label>
+    <div class="card mt-4" style="width: 50vw">
+        <div class="card-body">
+            <h2 class="card-title">Edit {{post.title}}</h2>
 
-    <label>Image:
-        <img src="{{post.imageUrl}}" alt="{{title}}">
-        <input type="file" name="post-image" class="form-control-file" />
-        <input type="text" name="existingImage" hidden value="{{post.imageUrl}}">
-    </label>
+            <form action="/community/post/{{post._id}}/edit" method="post" enctype="multipart/form-data">
+                <div class="col-md-12 mt-5">
+                    <label class="form-label"> Title:
+                        <input type="text" name="title" value="{{post.title}}" />
+                    </label>
+                </div>
+                <div class="col-md-12 mt-4">
 
-    <button>Save changes</button>
-</form>
+                    <label class="form-label"> Content:
+                        <textarea class="form-control" cols="30" rows="4" value="{{post.content}}"
+                            name="content"> </textarea>
+                    </label>
+                </div>
+                <div class="col-md-12">
+
+                    <label class="form-label">
+                        <div class="card w-25 mt-5"> <img src="{{post.imageUrl}}" alt="{{title}}"></div>
+                        <input type="file" name="post-image" class="form-control-file mt-4" />
+                        <input type="text" name="existingImage" hidden value="{{post.imageUrl}}">
+                    </label>
+                </div>
+                <div class="col-md-12 mt-4">
+                    <label class="form-label"> <button class="btn btn-outline-success">Save changes</button></label>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
