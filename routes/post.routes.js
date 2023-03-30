@@ -151,8 +151,6 @@ router.get("/community/my-posts", isLoggedIn, (req, res, next) => {
         })
 })
 
-
-
 //DELETE post
 router.post('/community/post/:postId/delete', isLoggedIn, isOwner, (req, res, next) => {
     const { postId } = req.params;
