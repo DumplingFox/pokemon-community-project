@@ -22,9 +22,21 @@ h1 {
   background-image: url("/images/pokedex-bg.jpeg");
 }
 
+.bg-image2 {
+  background-image: url("/images/grass_type.jpeg");
+}
+
 .card-image {
   background-image: url("/images/grass_type.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
 }
+
+.prairie-bg {
+  background-image: url("/images/home/pokemon-prairie.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+

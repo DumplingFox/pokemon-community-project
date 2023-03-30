@@ -15,11 +15,12 @@
                             <a href="/pokemon/{{this._id}}" class="card-link">
                                 <button type="button" class="btn btn-outline-success">Details</button>
                             </a>
-
+                            {{#if currentUser}}
                             <form action="/pokemon/{{this._id}}/like" method="POST">
                                 <button type="submit" class="btn btn-outline-danger" id="like-button"><span
                                         class="fa-solid fa-heart"></span> {{this.likes}}</button>
                             </form>
+                            {{/if}}
                         </div>
                     </div>
                 </div>

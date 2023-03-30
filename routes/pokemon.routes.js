@@ -25,26 +25,6 @@ router.get("/pokemon", (req, res, next) => {
         });
 })
 
-/* 
-// READ: entire list for logged in users
-router.get("/pokemon", isLoggedIn, (req, res, next) => {
-  const userId = req.session.currentUser._id;
-
-  Pokemon.find()
-    .then((pokemonArr) => {
-      const data = {
-        pokemonList: pokemonArr,
-      };
-
-      res.render("pokemon/pokemon.hbs", data);
-    })
-    .catch((e) => {
-      console.log("error getting pokemon from DB", e);
-      next(e);
-    });
-});
-*/
-
 // CREATE: get form
 router.get("/pokemon/create", (req, res, next) => {
 

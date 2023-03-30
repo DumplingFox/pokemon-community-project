@@ -31,6 +31,12 @@ const pokemonSchema = new Schema(
         imgUrl: {
             type: String
         },
+        hp: Number,
+        attack: Number, 
+        defense: Number,
+        spAtk: Number,
+        spDef: Number,
+        speed: Number,
         likes: { 
             type: Number,
              default: 0 

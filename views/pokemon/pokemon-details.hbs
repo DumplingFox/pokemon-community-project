@@ -1,10 +1,14 @@
+
+<body class="bg-image2">
+    
+
 <div class="container">
     <div class="row row-cols-1 row-cols-md-4 g-3 mx-auto justify-content-center mt-5">
-        <div class="card" style="width: 40vh">
+        <div class="card prairie-bg" style="width: 40vh">
             <img src="{{this.imgUrl}}" class="card-img-top" alt="{{this.name}} image">
         </div>
 
-        <div class="card" style="width: 40vh">
+        <div class="card border-dark border-3" style="width: 40vh">
             <div class="card-body">
                 <h5 class="card-title">{{this.name}} #{{this.indexNumber}}</h5>
                 <h6 class="card-subtitle mb-2 text-body-secondary">{{this.species}}</h6>
@@ -20,6 +24,15 @@
                 </ul>
 
                 <hr>
+
+                {{#unless currentUser}}
+                <div class="d-flex justify-content-center">
+                <a href="/auth/signup" class="card-link">
+                    <button type="button" class="btn btn-outline-warning">Add to Pokedex</button>
+                </a>
+                </div>
+                {{/unless}}
+                <!--
                 <div class="d-flex justify-content-between">
                     <a href="/pokemon/{{this._id}}/edit" class="card-link">
                         <button type="button" class="btn btn-outline-warning">Edit</button>
@@ -29,14 +42,25 @@
                         <button class="btn btn-outline-danger" id="delete-btn">Delete</button>
                     </form>
                 </div>
+                -->
 
             </div>
         </div>
 
-        <div class="card" style="width: 40vh">
+        <div class="card card border-dark border-3" style="width: 40vh">
             <div class="card-body">
-                <h5>more stats here</h5>
+                <h5>Base Stats</h5>
+                <ul class="list-group">
+                    <li class="list-group-item">HP: {{this.hp}}</li>
+                    <li class="list-group-item">Attack: {{this.attack}}</li>
+                    <li class="list-group-item">Defense: {{this.defense}}</li>
+                    <li class="list-group-item">Sp. Attack: {{this.spAtk}}</li>
+                    <li class="list-group-item">Sp. Defense: {{this.spDef}}</li>
+                    <li class="list-group-item">Speed: {{this.speed}}</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
+
+</body>
