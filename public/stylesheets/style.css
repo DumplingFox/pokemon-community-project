@@ -16,7 +16,7 @@
 
 .my-account {
   position: absolute;
-  top: 50%;
+  top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -24,7 +24,6 @@
 .pokedex-bg {
   background-image: url("/images/pokedex.png");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
 }
 
@@ -38,7 +37,6 @@
 .prairie-bg {
   background-image: url("/images/home/pokemon-prairie.jpeg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position: center center;
 }
 
@@ -67,6 +65,12 @@
 }
 
 .bg-signup {
+  background-image: url("/images/home/cartoon-pattern-blue.jpeg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.bg-post-details {
   background-image: url("/images/home/cartoon-pattern-blue.jpeg");
   background-size: cover;
   background-position: center center;

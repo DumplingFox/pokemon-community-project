@@ -1,34 +1,34 @@
-<div class="container text-left ms-4 mt-5">
-    <div class="row">
-        <div class="col ">
-            <div>{{formatDate this.createdAt}}</div>
-            <div>Written by {{createdBy.username}}</div>
+<body class="bg-post-details">
+
+
+    <div class="card text-center d-flex align-items-center flex-column mx-auto" style="width: 80%;">
+        <div class=" card-subtitle mb-2 text-body-secondary">
+            <div class="mt-5 align-items-left">
+                <div class="card-subtitle mb-2 text-body-secondary">{{formatDate this.createdAt}}</div>
+                <div class="card-subtitle mb-2 text-body-secondary">Written by {{createdBy.username}}</div>
+            </div>
         </div>
-    </div>
-    <div class="row mt-5 my-4">
-        <h1 class="col">{{title}}</h1>
-    </div>
-    <div class="card w-50 mt-5">
-        <img src="{{imageUrl}}" class="card-img" alt="...">
+        <div class="row mt-5 my-4">
+            <h1 class="col">{{title}}</h1>
+        </div>
+        <div class="card w-50 mt-5">
+            <img src="{{imageUrl}}" class="card-img" alt="...">
 
-    </div>
-    <div class="row w-50 mt-5">
-        <p class="col">{{content}}</p>
-    </div>
-
-    <div class="d-grid gap-2 d-md-flex d-md-block mt-5">
-
-        <div> <a href="/community/post/{{this._id}}/edit" class="btn btn-outline-secondary">Update</a></div>
-
-        <div>
-            <form action="/community/post/{{this._id}}/delete" method="POST">
-                <button class="btn btn-outline-danger">Delete</button>
-            </form>
+        </div>
+        <div class="row w-50 mt-5">
+            <p class="col">{{content}}</p>
         </div>
 
+        <div class="d-grid gap-2 d-md-flex d-md-block mt-5 mb-5">
 
+            <div> <a href="/community/post/{{this._id}}/edit" class="btn btn-outline-secondary">Update</a></div>
 
+            <div>
+                <form action="/community/post/{{this._id}}/delete" method="POST">
+                    <button class="btn btn-outline-danger">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
 
-
-</div>
+</body>
