@@ -20,11 +20,6 @@ const userSchema = new Schema(
       required: true,
     },
     //isAdmin: boolean,
-    imgUrl: {
-      type: String,
-      required: false,
-      default: "picture of pikachu or smth" // remember to insert an image here
-    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`

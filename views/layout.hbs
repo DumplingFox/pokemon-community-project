@@ -26,19 +26,10 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="/">Home</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="/pokemon" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
-              Pokemon
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/pokemon">View Pokemon</a></li>
-              <li>
-                <hr class="dropdown-divider">
-              </li>
-              <li><a class="dropdown-item" href="/pokemon/create">Create Pokemon</a></li>
-            </ul>
+           <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/pokemon">Pokedex</a>
           </li>
+          
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Community
@@ -60,7 +51,7 @@
         <div class="dropdown-center">
           <button class="btn btn-secondary dropdown-toggle login-btn" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
-            My Account
+            Account
           </button>
           <ul class="dropdown-menu">
             {{#if currentUser}}

@@ -41,10 +41,10 @@ const pokemonSchema = new Schema(
             type: Number,
              default: 0 
         },
-        likedBy: {
+        likedBy: [{
             type: Schema.Types.ObjectId,
-            ref: 'User'
-        }
+            ref: 'User',
+          }]
     }
 )
 

@@ -15,20 +15,14 @@
     </div>
     <div class="col-md-7 mt-5 ms-5">
         <h2>favorite pokemon</h2>
-        {{#each pokemonList}}
-        <ul>
-            <li>{{this.name}}</li>
-        </ul>
-        {{/each}}
-    </div>
-
-    <div class="col-md-7 mt-5 ms-5">
-        <h2>favorite posts</h2>
-        {{#each postList}}
-        <ul>
-            <li>{{this.title}}</li>
-        </ul>
-        {{/each}}
     </div>
 
 </div>
+
+{{#each pokemonList}}
+<ul>
+    <li>{{this.name}}</li>
+</ul>
+{{/each}}
+
+<h2>favorite posts</h2>

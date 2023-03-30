@@ -1,36 +1,24 @@
-<div id="home-carousel" class="carousel slide" data-bs-ride="true">
-    <div class="carousel-inner">
-        <div class="carousel-item active text-center">
-            <img src="/images/home/pokemon-prairie.jpeg" class="d-block w-100 h-60" alt="...">
-            <div class="carousel-caption d-flex flex-column justify-content-center text-center w-80 h-100 ">
-                <h1>Join your favorite Pokemon community today!</h1>
-                <h3>For people who believe the first 3 generations of pokemon are elite</h3>
-                <h5>(generations 2 & 3 coming soon to our Pokedex)</h5>
-                <div class="button-container d-flex justify-content-center mt-3">
-                    <button type="button" class="btn btn-warning">See Posts</button>
-                </div>
-                <div class="mt-4">
-                    <img src="/images/pokemon-seeds/dragonite.png" alt="">
-                </div>
-            </div>
+<body class="prairie-bg">
+<div class="d-flex flex-column align-items-center justify-content-center">
+    <div class="card col-8 mt-5 p-3 text-center" style="background-color: rgba(255, 255, 255, 0.5);">
+        <h1>Everyone's favorite Pokemon Community!</h1>
+        <h3>for people who believe the first 3 generations of pokemon are elite</h3>
+        {{#if currentUser}}
+        <div class="button-container d-flex justify-content-center mt-3">
+            <a href="/community">
+                <button type="button" class="btn btn-warning">View Posts</button>
+            </a>
         </div>
-
-        <div class="carousel-item">
-                <img src="/images/home/lapras-wallpaper.png" class="d-block w-100 h-60" alt="...">
+        {{else}}
+        <div class="button-container d-flex justify-content-center mt-3">
+            <a href="/auth/signup">
+                <button type="button" class="btn btn-warning">Sign up now!</button>
+            </a>
         </div>
-
-
-        <div class="carousel-item">
-                <img src="/images/home/bulbasaur-wallpaper.jpeg" class="d-block w-100 h-60" alt="...">
-        </div>
-
-        
-        <button class="carousel-control-prev" type="button" data-bs-target="#home-carousel" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#home-carousel" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+        {{/if}}
     </div>
+    <div class="mt-4">
+        <img src="/images/pokemon-seeds/dragonite.png" alt="">
+    </div>
+</div>
+</body>
