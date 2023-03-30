@@ -51,7 +51,7 @@ router.post("/community/post/create", fileUploader.single('post-image'), isLogge
 
 
     if (req.file) {
-        PostSomething.create({ title, content, imageUrl: req.file.path, createdBy: userId })
+        PostSomething.create({ title, content, imageUrl: req.file.path, createdBy: userId, createdAt: new Date() })
             .then(responseFromDB => {
                 res.redirect("/community");
             })
@@ -60,7 +60,7 @@ router.post("/community/post/create", fileUploader.single('post-image'), isLogge
                 next(e);
             })
     } else {
-        PostSomething.create({ title, content, createdBy: userId })
+        PostSomething.create({ title, content, createdBy: userId, createdAt: new Date() })
             .then(responseFromDB => {
                 res.redirect("/community");
             })
@@ -78,6 +78,7 @@ router.get("/community/post/:postId", isLoggedIn, (req, res, next) => {
     const { postId } = req.params;
 
     PostSomething.findById(postId)
+        .populate('createdBy')
         .then(postDetails => {
             res.render("community/post-details", postDetails);
         })
@@ -101,7 +102,7 @@ router.get("/community/post/:postId/edit", isOwner, isLoggedIn, (req, res, next)
             const data = {
                 post: postDetails,
             }
-
+            console.log(data);
             res.render('community/post-edit', data);
 
         })
