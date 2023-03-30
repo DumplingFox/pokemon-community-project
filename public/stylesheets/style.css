@@ -10,8 +10,24 @@
   width: 8vw;
 }
 
-.navbar {
-  color: #3c5aa6;
+.bg-blue {
+  background-color: #3c5aa6;
+}
+
+#poke-yellow {
+  color: #ffcb05;
+}
+
+.poke-blue {
+  background-color: #2a75bb;
+}
+
+.login-btn:hover {
+  background-color: #c7a008;
+}
+
+.dropdown-item:hover {
+  background-color: #2a75bb;
 }
 
 .my-account {
