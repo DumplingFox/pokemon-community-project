@@ -13,9 +13,13 @@
                         <h5 class="card-title">{{this.title}}</h5>
                         <p class="card-text">{{this.content}}</p>
                     </div>
-                    <div class="card-footer">
+                    <div class="card-footer d-flex justify-content-between">
                         <a href="/community/post/{{this._id}}/edit" class="btn btn-outline-warning">Update</a>
                         <a href="/community/post/{{this._id}}" class="btn btn-outline-primary">Read More</a>
+                        <form action="/my-posts/{{this._id}}/like" method="POST">
+                            <button type="submit" class="btn btn-outline-danger" id="like-community-button"> <span
+                                    class="fa-solid fa-heart"></span> {{this.likes}}</button>
+                        </form>
                     </div>
                 </div>
             </div>

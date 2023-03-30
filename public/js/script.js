@@ -19,3 +19,19 @@ likeButton.addEventListener("click", () => {
       console.error(err);
     });
 });
+
+const likeCommunityButton = document.getElementById("like-community-button");
+
+likeCommunityButton.addEventListener("click", () => {
+  const postId = likeCommunityButton.dataset.postId;
+
+  fetch(`/community/${pokemonId}/like`, { method: "POST" })
+    .then((response) => {
+      if (response.ok) {
+        likeCommunityButton.classList.add("liked");
+      }
+    })
+    .catch((err) => {
+      console.error(err);
+    });
+});

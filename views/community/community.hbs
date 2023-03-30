@@ -34,8 +34,14 @@
                         <h5 class="card-title">{{this.title}}</h5>
                         <p class="card-text">{{this.content}}</p>
                     </div>
-                    <div class="card-footer">
-                        <a href="/community/post/{{this._id}}" class="btn btn-primary">More Details</a>
+                    <div class="card-footer d-flex justify-content-between">
+                        <a href="/community/post/{{this._id}}" class="btn btn-outline-primary">Read More</a>
+
+                        <form action="/community/{{this._id}}/like" method="POST">
+                            <button type="submit" class="btn btn-outline-danger" id="like-community-button"> <span
+                                    class="fa-solid fa-heart"></span> {{this.likes}}</button>
+                        </form>
+
                     </div>
                 </div>
             </div>

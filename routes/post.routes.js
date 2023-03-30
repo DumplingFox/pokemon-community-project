@@ -16,6 +16,7 @@ const PostSomething = require("../models/Post.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const isOwner = require("../middleware/isOwner");
+const Post = require("../models/Post.model");
 
 
 //READ: list of posts from community
@@ -150,6 +151,56 @@ router.get("/community/my-posts", isLoggedIn, (req, res, next) => {
             next(e);
         })
 })
+
+// LIKE post
+router.post("/community/:postId/like", (req, res) => {
+    const postId = req.params.postId;
+    const currentUser = req.session.currentUser;
+
+    Post.findById(postId)
+        .then((post) => {
+            if (!post) {
+                return res.status(404).send("Post not found");
+            }
+
+            post.likes++;
+            post.likedBy = currentUser;
+            return post.save();
+        })
+        .then(() => {
+            res.redirect("/community");
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send("Server error");
+        });
+});
+
+// like my post
+
+// LIKE post
+router.post("/my-posts/:postId/like", (req, res) => {
+    const postId = req.params.postId;
+    const currentUser = req.session.currentUser;
+
+    Post.findById(postId)
+        .then((post) => {
+            if (!post) {
+                return res.status(404).send("Post not found");
+            }
+
+            post.likes++;
+            post.likedBy = currentUser;
+            return post.save();
+        })
+        .then(() => {
+            res.redirect("/community/my-posts");
+        })
+        .catch((err) => {
+            console.error(err);
+            res.status(500).send("Server error");
+        });
+});
 
 //DELETE post
 router.post('/community/post/:postId/delete', isLoggedIn, isOwner, (req, res, next) => {
