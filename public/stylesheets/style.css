@@ -6,6 +6,14 @@
   background-image: url("/images/grass_type.jpeg");
 }
 
+.logo-img {
+  width: 8vw;
+}
+
+.navbar {
+  color: #3c5aa6;
+}
+
 .my-account {
   position: absolute;
   top: 50%;
