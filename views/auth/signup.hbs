@@ -1,3 +1,4 @@
+<!--
 <div id="form">
   <h2>Sign Up</h2>
   <form action="/auth/signup" method="POST">
@@ -18,7 +19,47 @@
 
 
     {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+    <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
+</div>
+-->
+
+
+<div class="card" style="width: 60vw">
+  <div class="card-header">
+    Pokemon Place
+  </div>
+  <div class="card-body">
+    <h5 class="card-title mb-3">Create an Account</h5>
+
+    <form class="row g-3" action="/auth/signup" method="POST">
+      <div class="row mb-3">
+        <label class="col-sm-6 col-form-label">Username
+          <div class="col-sm-10">
+            <input type="text" class="form-control" name="username" placeholder="ilovepokemon101">
+          </div>
+        </label>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-6 col-form-label">Email
+          <div class="col-sm-10">
+            <input type="email" class="form-control" name="email" placeholder="johndoe@pizza.com">
+          </div>
+        </label>
+      </div>
+      <div class="row mb-3">
+        <label class="col-sm-6 col-form-label">Password
+          <div class="col-sm-10">
+            <input type="password" class="form-control" name="password" placeholder="your password">
+          </div>
+        </label>
+      </div>
+
+      {{#if errorMessage}}
+      <p class="error">{{errorMessage}}</p>
+      {{/if}}
+      <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+  </div>
 </div>
