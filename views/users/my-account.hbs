@@ -1,28 +1,31 @@
-<div class="container mt-5 ms-5">
-    <h2>this is my account!</h2>
+<body class="prairie-bg">
+    <div class="card pokedex-bg my-account" style="width: 80vw">
+        <div class="card-body">
+            <div class="card text-center d-flex align-items-center flex-column mx-auto" style="width: 80%;">
+                <h2 class="card-title">Welcome {{currentUser.username}}!</h2>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Username: {{currentUser.username}}</h6>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{currentUser.email}}</h6>
 
-    <div class="col-md-7 mt-3 ms-5">
-        <label class="form-label">
-            <h5>username:</h5>
-            <p>{{currentUser.username}}</p>
-        </label>
+            </div>
+            <hr>
+
+            <h4>Your Favorite Pokemon</h4>
+
+            <div class="row row-cols-1 row-cols-md-6 g-4">
+                {{#each pokemonList}}
+                <div class="col">
+                    <div class="card">
+                        <img src="{{this.imgUrl}}" class="card-img-top" alt="{{this.name}}-image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.name}}</h5>
+                            <a href="/pokemon/{{this._id}}" class="card-link">
+                                <button type="button" class="btn btn-outline-success">View</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
     </div>
-    <div class="col-md-7 mt-3 ms-5">
-        <label class="form-label">
-            <h5>email:</h5>
-            <p>{{currentUser.email}}</p>
-        </label>
-    </div>
-    <div class="col-md-7 mt-5 ms-5">
-        <h2>favorite pokemon</h2>
-    </div>
-
-</div>
-
-{{#each pokemonList}}
-<ul>
-    <li>{{this.name}}</li>
-</ul>
-{{/each}}
-
-<h2>favorite posts</h2>
+</body>
