@@ -39,6 +39,8 @@ app.use("/auth", authRoutes);
 
 app.use("/", require("./routes/pokemon.routes"));
 
+/* const adminRoutes = require("./routes/admin.routes");
+app.use("/", adminRoutes); */
 
 app.use("/", require("./routes/post.routes"));
 

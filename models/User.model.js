@@ -19,6 +19,7 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    //isAdmin: boolean,
     imgUrl: {
       type: String,
       required: false,
