@@ -1,6 +1,20 @@
-<h1>this is my account!</h1>
-<p>username:</p>
-<p>email:</p>
+<div class="container mt-5 ms-5">
+    <h2>this is my account!</h2>
 
-<h2>favorite pokemon</h2>
-<h2>favorite posts</h2>
+    <div class="col-md-7 mt-3 ms-5">
+        <label class="form-label">
+            <h5>username:</h5>
+            <p>{{currentUser.username}}</p>
+        </label>
+    </div>
+    <div class="col-md-7 mt-3 ms-5">
+        <label class="form-label">
+            <h5>email:</h5>
+            <p>{{currentUser.email}}</p>
+        </label>
+    </div>
+    <div class="col-md-7 mt-5 ms-5">
+        <h2>favorite pokemon</h2>
+    </div>
+
+</div>

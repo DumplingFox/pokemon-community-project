@@ -1,26 +1,30 @@
-<div class="container mt-5 ms-5">
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST" class="row g-3">
-    <div class="col-md-7">
-      <label for="inputAddress" class="form-label">Username</label>
-      <input type="text" class="form-control" name="username" placeholder="1234 Main St">
-    </div>
-    <div class="col-md-7">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" name="email">
-    </div>
-    <div class="col-md-7">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" name="password">
-    </div>
+<body class="user-bg-image">
+  <div class="container col-md-5 p-3 mt-5" style="background-color: white;    border-radius: 10px;">
+    <div class="container mt-5 ms-5">
+      <h2>Log In</h2>
+      <form action="/auth/login" method="POST" class="row g-3">
+        <div class="col-md-10">
+          <label for="inputAddress" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" placeholder="1234 Main St">
+        </div>
+        <div class="col-md-10">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email">
+        </div>
+        <div class="col-md-10">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password">
+        </div>
 
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign in</button>
-    </div>
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
 
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+    </div>
+  </div>
+</body>

@@ -1,26 +1,32 @@
-<div class="container mt-5 ms-5">
-  <h2>Create an Account</h2>
-  <form action="/auth/signup" method="POST" class="row g-3">
-    <div class="col-md-7">
-      <label for="inputAddress" class="form-label">Username</label>
-      <input type="text" class="form-control" name="username" placeholder="ilovepokemon101">
-    </div>
-    <div class="col-md-7">
-      <label for="inputEmail4" class="form-label">Email</label>
-      <input type="email" class="form-control" name="email" placeholder="johndoe@pizza.com">
-    </div>
-    <div class="col-md-7">
-      <label for="inputPassword4" class="form-label">Password</label>
-      <input type="password" class="form-control" name="password" placeholder="your password">
-    </div>
+<body class="bg-signup">
 
 
-    <div class="col-12">
-      <button type="submit" class="btn btn-primary">Sign Up</button>
-    </div>
+  <div class="container col-md-5 p-3 mt-5" style="background-color: white;  border-radius: 10px;">
+    <div class="container mt-5 ms-5">
+      <h2>Create an Account</h2>
+      <form action="/auth/signup" method="POST" class="row g-3">
+        <div class="col-md-10">
+          <label for="inputAddress" class="form-label">Username</label>
+          <input type="text" class="form-control" name="username" placeholder="ilovepokemon101">
+        </div>
+        <div class="col-md-10">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" class="form-control" name="email" placeholder="johndoe@pizza.com">
+        </div>
+        <div class="col-md-10">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" class="form-control" name="password" placeholder="your password">
+        </div>
 
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Sign Up</button>
+        </div>
+
+        {{#if errorMessage}}
+        <p class="error">{{errorMessage}}</p>
+        {{/if}}
+      </form>
+    </div>
+  </div>
+</body>
