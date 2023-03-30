@@ -1,20 +1,29 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.post-card {
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
 }
 
-a {
-  color: #00b7ff;
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }
 
-h1 {
-  color: 15px;
+.post-title {
+  font-weight: bold;
+  font-size: 24px;
+  color: #333;
 }
 
-* {
-  text-decoration: none;
+.post-content {
+  color: #666;
+  font-size: 16px;
 }
 
-#delete-button {
-  display: inline;
+.post-info {
+  font-size: 14px;
+  color: #999;
 }
