@@ -9,6 +9,7 @@ const router = express.Router();
 
 // READ: entire list
 router.get("/pokemon", (req, res, next) => {
+
     Pokemon.find()
         .then(pokemonArr => {
 
@@ -23,6 +24,26 @@ router.get("/pokemon", (req, res, next) => {
             next(e);
         });
 })
+
+/* 
+// READ: entire list for logged in users
+router.get("/pokemon", isLoggedIn, (req, res, next) => {
+  const userId = req.session.currentUser._id;
+
+  Pokemon.find()
+    .then((pokemonArr) => {
+      const data = {
+        pokemonList: pokemonArr,
+      };
+
+      res.render("pokemon/pokemon.hbs", data);
+    })
+    .catch((e) => {
+      console.log("error getting pokemon from DB", e);
+      next(e);
+    });
+});
+*/
 
 // CREATE: get form
 router.get("/pokemon/create", (req, res, next) => {
@@ -95,7 +116,7 @@ router.get("/pokemon/:pokemonId", (req, res, next) => {
         });
 })
 
-// LIKE
+// LIKE pokemon
 router.post("/pokemon/:pokemonId/like", (req, res) => {
     const pokemonId = req.params.pokemonId;
   
@@ -116,6 +137,24 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
         res.status(500).send("Server error");
       });
   });
+
+// FILTER pokemon
+router.get('/pokemon/filter', (req, res) => {
+    const type1 = req.query.type1;
+    const type2 = req.query.type2;
+
+    Pokemon.find({
+        $or: [
+            { type1: type1 },
+            { type2: type2 }
+        ]
+    }).then(pokemons => {
+        res.render('pokemon/filter', { pokemons });
+    }).catch(err => {
+        console.log(err);
+        res.status(500).send('Error retrieving filtered Pokemon data');
+    });
+});
 
 // DELETE
 router.post("/pokemon/:pokemonId/delete", (req, res, next) => {
