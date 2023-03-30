@@ -1,29 +1,23 @@
-/* body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-
-
-.post-card {
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
-  margin-bottom: 20px;
-  padding: 20px;
-  transition: all 0.3s ease;
-}
-
-h1 {
-  color: 15px;
-} */
-
 .bg-image {
   background-image: url("/images/pokedex-bg.jpeg");
 }
 
 .bg-image2 {
   background-image: url("/images/grass_type.jpeg");
+}
+
+.my-account {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.pokedex-bg {
+  background-image: url("/images/pokedex.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 .card-image {
@@ -39,8 +33,6 @@ h1 {
   background-repeat: no-repeat;
   background-position: center center;
 }
-
-
 
 .user-bg-image {
   background-image: url("/images/home/growlithe-bg.png");

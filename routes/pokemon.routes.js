@@ -104,12 +104,18 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
   
     Pokemon.findById(pokemonId)
       .then((pokemon) => {
-        if (!pokemon) {
-          return res.status(404).send("Pokemon not found");
+        if (!pokemon.likedBy) {
+          pokemon.likedBy = [];
         }
   
-        pokemon.likes++;
-        pokemon.likedBy = currentUser;
+        if (!pokemon.likedBy.includes(currentUser)) {
+          pokemon.likes++;
+          pokemon.likedBy.push(currentUser);
+        } else {
+          pokemon.likes--;
+          pokemon.likedBy = pokemon.likedBy.filter((user) => user !== currentUser);
+        }
+        
         return pokemon.save();
       })
       .then(() => {
