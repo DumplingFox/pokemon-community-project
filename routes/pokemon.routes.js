@@ -14,7 +14,8 @@ router.get("/pokemon", (req, res, next) => {
         .then(pokemonArr => {
 
             const data = {
-                pokemonList: pokemonArr
+                pokemonList: pokemonArr,
+                currentUser: req.session.currentUser
             }
 
             res.render("pokemon/pokemon.hbs", data)
@@ -99,6 +100,7 @@ router.get("/pokemon/:pokemonId", (req, res, next) => {
 // LIKE pokemon
 router.post("/pokemon/:pokemonId/like", (req, res) => {
     const pokemonId = req.params.pokemonId;
+    const currentUser = req.session.currentUser;
   
     Pokemon.findById(pokemonId)
       .then((pokemon) => {
@@ -107,6 +109,7 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
         }
   
         pokemon.likes++;
+        pokemon.likedBy = currentUser;
         return pokemon.save();
       })
       .then(() => {
@@ -118,23 +121,22 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
       });
   });
 
-// FILTER pokemon
-router.get('/pokemon/filter', (req, res) => {
-    const type1 = req.query.type1;
-    const type2 = req.query.type2;
-
-    Pokemon.find({
-        $or: [
-            { type1: type1 },
-            { type2: type2 }
-        ]
-    }).then(pokemons => {
-        res.render('pokemon/filter', { pokemons });
-    }).catch(err => {
-        console.log(err);
-        res.status(500).send('Error retrieving filtered Pokemon data');
-    });
-});
+  router.get("/my-account", (req, res, next) => {
+    const currentUserId = req.session.currentUser._id;
+  
+    Pokemon.find({ likedBy: currentUserId })
+      .then((likedPokemon) => {
+        const data = {
+          pokemonList: likedPokemon,
+          currentUser: req.session.currentUser,
+        };
+        res.render("users/my-account.hbs", data);
+      })
+      .catch((err) => {
+        console.error(err);
+        next(err);
+      });
+  });
 
 // DELETE
 router.post("/pokemon/:pokemonId/delete", (req, res, next) => {
