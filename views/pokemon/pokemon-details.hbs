@@ -1,34 +1,42 @@
-<div class="row row-cols-1 row-cols-md-2 g-2">
-    <div class="card" style="width: 40vh">
-        <img src="{{this.imgUrl}}" class="card-img-top" alt="{{this.name}} image">
-    </div>
+<div class="container">
+    <div class="row row-cols-1 row-cols-md-4 g-3 mx-auto justify-content-center mt-5">
+        <div class="card" style="width: 40vh">
+            <img src="{{this.imgUrl}}" class="card-img-top" alt="{{this.name}} image">
+        </div>
 
-    <div class="card" style="width: 40vh">
-        <div class="card-body">
-            <h5 class="card-title">{{this.name}} #{{this.indexNumber}}</h5>
-            <h6 class="card-subtitle mb-2 text-body-secondary">{{this.species}}</h6>
-            <span>{{this.type1}} </span>
-            <div class="vr"></div>
-            <span> {{this.type2}}</span>
+        <div class="card" style="width: 40vh">
+            <div class="card-body">
+                <h5 class="card-title">{{this.name}} #{{this.indexNumber}}</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">{{this.species}}</h6>
+                <span>{{this.type1}} </span>
+                <div class="vr"></div>
+                <span> {{this.type2}}</span>
 
-            <hr>
+                <hr>
 
-            <ul class="list-group">
-                <li class="list-group-item">Height (m): {{this.height}}</li>
-                <li class="list-group-item">Weight (kg): {{this.weight}}</li>
-            </ul>
+                <ul class="list-group">
+                    <li class="list-group-item">Height (m): {{this.height}}</li>
+                    <li class="list-group-item">Weight (kg): {{this.weight}}</li>
+                </ul>
 
-            <hr>
-            <div class="d-flex justify-content-between">
-                <a href="/pokemon/{{this._id}}/edit" class="card-link">
-                    <button type="button" class="btn btn-outline-warning">Edit</button>
-                </a>
+                <hr>
+                <div class="d-flex justify-content-between">
+                    <a href="/pokemon/{{this._id}}/edit" class="card-link">
+                        <button type="button" class="btn btn-outline-warning">Edit</button>
+                    </a>
 
-                <form action="/pokemon/{{this._id}}/delete" method="POST">
-                    <button class="btn btn-outline-danger" id="delete-btn">Delete</button>
-                </form>
+                    <form action="/pokemon/{{this._id}}/delete" method="POST">
+                        <button class="btn btn-outline-danger" id="delete-btn">Delete</button>
+                    </form>
+                </div>
+
             </div>
+        </div>
 
+        <div class="card" style="width: 40vh">
+            <div class="card-body">
+                <h5>more stats here</h5>
+            </div>
         </div>
     </div>
 </div>

@@ -130,7 +130,7 @@ router.post("/pokemon/:pokemonId/like", (req, res) => {
         return pokemon.save();
       })
       .then(() => {
-        res.send("Pokemon liked");
+        res.redirect("/pokemon");
       })
       .catch((err) => {
         console.error(err);

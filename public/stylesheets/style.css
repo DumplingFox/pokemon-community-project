@@ -1,4 +1,4 @@
-body {
+/* body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
@@ -9,12 +9,15 @@ a {
 
 h1 {
   color: 15px;
+} */
+
+.bg-image {
+  background-image: url("/images/pokedex-bg.jpeg");
 }
 
-* {
-  text-decoration: none;
-}
-
-#delete-button {
-  display: inline;
+.card-image {
+  background-image: url("/images/grass_type.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
