@@ -27,7 +27,7 @@ CLOUDINARY_SECRET=<your_cloudinary_secret>
 - After setting up the environment variables in the .env file, your "pokemon-community-project" app should now be properly configured to run on your local machine.
 
 
-## run the "Pokemon-community-project" app
+## Run the "Pokemon-community-project" app
 
 **To run the "Pokemon-community-project" app on your computer, follow these instructions:**
 
