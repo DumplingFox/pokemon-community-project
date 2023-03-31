@@ -12,10 +12,10 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-blue navbar-custom">
     <div class="container-fluid">
 
-      <a class="navbar-brand" href="/">
+      <a class="navbar-brand navbar-custom" href="/">
         <img class="logo-img" src="/images/pokemon-logo.png" alt="Pokemon Logo">
       </a>
 
@@ -28,48 +28,48 @@
 
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/">Home</a>
+            <a class="nav-link active" id="poke-yellow" aria-current="page" href="/">Home</a>
           </li>
            <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="/pokemon">Pokedex</a>
+            <a class="nav-link active" id="poke-yellow" aria-current="page" href="/pokemon">Pokedex</a>
           </li>
           
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link dropdown-toggle" id="poke-yellow" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Community
             </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="/community">All Posts</a></li>
+            <ul class="dropdown-menu bg-blue">
+              <li><a class="dropdown-item" id="poke-yellow" href="/community">All Posts</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="/community/my-posts">My Posts</a></li>
+              <li><a class="dropdown-item" id="poke-yellow" href="/community/my-posts">My Posts</a></li>
               <li>
                 <hr class="dropdown-divider">
               </li>
-              <li><a class="dropdown-item" href="/community/post/create">Create Post</a></li>
+              <li><a class="dropdown-item" id="poke-yellow" href="/community/post/create">Create Post</a></li>
             </ul>
           </li>
         </ul>
 
         <div class="dropdown-center">
-          <button class="btn btn-secondary dropdown-toggle login-btn" type="button" data-bs-toggle="dropdown"
+          <button class="btn btn-secondary dropdown-toggle login-btn poke-blue" id="poke-yellow" type="button" data-bs-toggle="dropdown"
             aria-expanded="false">
             Account
           </button>
-          <ul class="dropdown-menu">
+          <ul class="dropdown-menu bg-blue">
             {{#if currentUser}}
-            <li><a class="dropdown-item" href="/my-account">My Account</a></li>
+            <li><a class="dropdown-item" id="poke-yellow" href="/my-account">My Account</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="/auth/logout">Log Out</a></li>
+            <li><a class="dropdown-item" id="poke-yellow" href="/auth/logout">Log Out</a></li>
             {{else}}
-            <li><a class="dropdown-item" href="/auth/login">Login</a></li>
+            <li><a class="dropdown-item" id="poke-yellow" href="/auth/login">Login</a></li>
             <li>
               <hr class="dropdown-divider">
             </li>
-            <li><a class="dropdown-item" href="/auth/signup">Register</a></li>
+            <li><a class="dropdown-item" id="poke-yellow" href="/auth/signup">Register</a></li>
             {{/if}}
           </ul>
         </div>
