@@ -14,7 +14,7 @@
             <div class="row row-cols-1 row-cols-md-6 g-4 m-4">
                 {{#each pokemonList}}
                 <div class="col">
-                    <div class="card">
+                    <div class="card fav-card-max">
                         <img src="{{this.imgUrl}}" class="card-img-top" alt="{{this.name}}-image">
                         <div class="card-body">
                             <h5 class="card-title">{{this.name}}</h5>
@@ -27,13 +27,13 @@
                 {{/each}}
             </div>
             <hr>
-            <h4>Your Favorite Post</h4>
+            <h4>Your Favorite Posts</h4>
 
             <div class="row row-cols-1 row-cols-md-6 g-4 m-4">
                 {{#each postList}}
                 <div class="col">
-                    <div class="card">
-                        <img src="{{this.imageUrl}}" class="card-img-top" alt="{{this.title}}-image">
+                    <div class="card fav-card-max">
+                        <img src="{{this.imageUrl}}" class="card-img-top fav-card-img" alt="{{this.title}}-image">
                         <div class="card-body">
                             <h5 class="card-title one-lines">{{this.title}}</h5>
                             <a href="/community/post/{{this._id}}" class="card-link">

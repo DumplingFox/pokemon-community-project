@@ -52,6 +52,16 @@
   object-fit: cover;
 }
 
+.fav-card-max {
+  height: 35vh;
+  overflow: hidden;
+}
+
+.fav-card-img {
+  height: 15vh;
+  object-fit: cover;
+}
+
 .pokedex-bg {
   background-image: url("/images/pokedex.png");
   background-size: cover;
