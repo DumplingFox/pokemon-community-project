@@ -1,7 +1,7 @@
 <body class="prairie-bg">
     <div class="pokedex-bg my-account" style="width: 80vw">
-        <div class="card-body">
-            <div class="card text-center d-flex align-items-center flex-column mx-auto" style="width: 80%;">
+        <div class="card-body" style="max-height: 80vh; overflow: auto;">
+            <div class="card text-center d-flex align-items-center flex-column mt-4 mx-auto" style="width: 80%;">
                 <h2 class="card-title">Welcome {{currentUser.username}}!</h2>
                 <h6 class="card-subtitle mb-2 text-body-secondary">Username: {{currentUser.username}}</h6>
                 <h6 class="card-subtitle mb-2 text-body-secondary">Email: {{currentUser.email}}</h6>
@@ -11,7 +11,7 @@
 
             <h4>Your Favorite Pokemon</h4>
 
-            <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="row row-cols-1 row-cols-md-6 g-4 m-4">
                 {{#each pokemonList}}
                 <div class="col">
                     <div class="card">
@@ -29,7 +29,7 @@
             <hr>
             <h4>Your Favorite Post</h4>
 
-            <div class="row row-cols-1 row-cols-md-6 g-4">
+            <div class="row row-cols-1 row-cols-md-6 g-4 m-4">
                 {{#each postList}}
                 <div class="col">
                     <div class="card">
