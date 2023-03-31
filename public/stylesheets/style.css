@@ -18,6 +18,11 @@
   color: #ffcb05;
 }
 
+.card-scroll {
+  padding: 1rem;
+  overflow-y: auto;
+}
+
 .poke-blue {
   background-color: #2a75bb;
 }
@@ -35,6 +40,16 @@
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.card-maxh {
+  max-height: 60vh;
+   overflow: hidden;
+}
+
+.img-overflow {
+  height: 30vh;
+  object-fit: cover;
 }
 
 .pokedex-bg {
