@@ -1,6 +1,6 @@
 ## About "pokemon-community-project" 
 
-- This is a Pokemon forum built on the Express.js framework and Mongoose database. Users can create accounts, explore a Pokedex, post in the community forum, and save their favorite Pokemon and posts. PokeConnect offers a platform for fans to connect and share their passion.
+- This is a Pokemon forum built on the Express.js framework and Mongoose database. Users can create accounts, explore a Pokedex, post in the community forum, and save their favorite Pokemon and posts. pokemon-community-project offers a platform for fans to connect and share their passion.
 
 ## Configure the environment
 
@@ -24,7 +24,7 @@ CLOUDINARY_SECRET=<your_cloudinary_secret>
 
 - For the SESSION_SECRET, generate a random, unique string to be used as a secret key for your session cookies. This key helps secure your user sessions and protect against tampering.
 
-- After setting up the environment variables in the .env file, your "PokeConnect" app should now be properly configured to run on your local machine.
+- After setting up the environment variables in the .env file, your "pokemon-community-project" app should now be properly configured to run on your local machine.
 
 
 ## run the "Pokemon-community-project" app
