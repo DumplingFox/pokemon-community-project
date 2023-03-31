@@ -44,7 +44,7 @@
 
 .card-maxh {
   max-height: 60vh;
-   overflow: hidden;
+  overflow: hidden;
 }
 
 .img-overflow {
@@ -107,9 +107,17 @@
   background-position: center center;
 }
 
-.two-lines {
+.three-lines {
   display: -webkit-box;
   -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.one-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
